@@ -4,7 +4,11 @@
 #pragma hdrstop
 #include <tchar.h>
 //---------------------------------------------------------------------------
-USEFORM("Unit2.cpp", Form2);
+#include <Vcl.Styles.hpp>
+#include <Vcl.Themes.hpp>
+USEFORM("Unit2.cpp", mainForm);
+USEFORM("Unit1.cpp", reviewForm);
+USEFORM("Unit3.cpp", ratingForm);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -12,7 +16,10 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 	{
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
-		Application->CreateForm(__classid(TForm2), &Form2);
+		TStyleManager::TrySetStyle("Material Oxford Blue");
+		Application->CreateForm(__classid(TmainForm), &mainForm);
+		Application->CreateForm(__classid(TreviewForm), &reviewForm);
+		Application->CreateForm(__classid(TratingForm), &ratingForm);
 		Application->Run();
 	}
 	catch (Exception &exception)

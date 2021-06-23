@@ -4,26 +4,20 @@
 #pragma hdrstop
 
 #include "Unit2.h"
+#include "Unit1.h"
+#include "Unit3.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TForm2 *Form2;
+TmainForm *mainForm;
 //---------------------------------------------------------------------------
-__fastcall TForm2::TForm2(TComponent* Owner)
+__fastcall TmainForm::TmainForm(TComponent* Owner)
 	: TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-void __fastcall TForm2::ratingSubmitButtonClick(TObject *Sender)
+void __fastcall TmainForm::ratingSubmitButtonClick(TObject *Sender)
 {
 
 	  displayField->Lines->Add("Book name: " + bookName->Text);
@@ -52,7 +46,7 @@ void __fastcall TForm2::ratingSubmitButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TForm2::saveButtonClick(TObject *Sender)
+void __fastcall TmainForm::saveButtonClick(TObject *Sender)
 {
 	if(SaveDialog ->Execute() == true) {
 	   displayField->Lines->SaveToFile(SaveDialog->FileName) ;
@@ -62,7 +56,7 @@ void __fastcall TForm2::saveButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm2::openButtonClick(TObject *Sender)
+void __fastcall TmainForm::openButtonClick(TObject *Sender)
 {
 	if(OpenDialog ->Execute() == true) {
 	   displayField->Lines->LoadFromFile(OpenDialog->FileName) ;
@@ -70,8 +64,7 @@ void __fastcall TForm2::openButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-
-void __fastcall TForm2::Exit1Click(TObject *Sender)
+void __fastcall TmainForm::Exit1Click(TObject *Sender)
 {
 	if(Application->MessageBox(L"Exit the application?", L"Exit", MB_YESNO|MB_ICONEXCLAMATION|MB_DEFBUTTON2) == IDYES)
 	   Application->Terminate();
@@ -79,4 +72,20 @@ void __fastcall TForm2::Exit1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+
+
+
+
+
+void __fastcall TmainForm::reviewButtonClick(TObject *Sender)
+{
+	reviewForm->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TmainForm::ratingButtonClick(TObject *Sender)
+{
+	   ratingForm->ShowModal();
+}
+//---------------------------------------------------------------------------
 
