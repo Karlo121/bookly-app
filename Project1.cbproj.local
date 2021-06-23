@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/05/18 16:45:56.000.560,=D:\C++\C++ builder\Project1PCH1.h</Transaction>
+    <Transaction>2021/05/18 16:45:57.000.061,=D:\C++\C++ builder\Unit2.cpp</Transaction>
+    <Transaction>2021/05/18 16:46:24.000.926,D:\C++\C++ builder\Unit2.cpp=C:\Users\Comp\Desktop\Faks\Napredne Tehnike Programiranja\Projekt\Unit2.cpp</Transaction>
+    <Transaction>2021/05/18 16:46:24.000.926,D:\C++\C++ builder\Unit2.dfm=C:\Users\Comp\Desktop\Faks\Napredne Tehnike Programiranja\Projekt\Unit2.dfm</Transaction>
+    <Transaction>2021/05/18 16:46:24.000.926,D:\C++\C++ builder\Unit2.h=C:\Users\Comp\Desktop\Faks\Napredne Tehnike Programiranja\Projekt\Unit2.h</Transaction>
+    <Transaction>2021/05/18 16:46:28.000.218,D:\C++\C++ builder\Project1PCH1.h=C:\Users\Comp\Desktop\Faks\Napredne Tehnike Programiranja\Projekt\Project1PCH1.h</Transaction>
+    <Transaction>2021/05/18 16:46:30.000.147,D:\C++\C++ builder\Project1.cbproj=C:\Users\Comp\Desktop\Faks\Napredne Tehnike Programiranja\Projekt\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
