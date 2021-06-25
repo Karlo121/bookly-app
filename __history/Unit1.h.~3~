@@ -43,8 +43,6 @@ __published:	// IDE-managed Components
 	TRichEditBold *FormatRichEditBold1;
 	TRichEditItalic *FormatRichEditItalic1;
 	TButton *reviewCompleteButton;
-	TAction *Action1;
-	TAction *Action2;
 	void __fastcall reviewCompleteButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations

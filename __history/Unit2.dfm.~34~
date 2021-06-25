@@ -270,7 +270,6 @@ object mainForm: TmainForm
       end
       object SaveasCustom1: TMenuItem
         Caption = 'Save as Custom...'
-        OnClick = SaveasCustom1Click
       end
       object OpenCustom1: TMenuItem
         Caption = 'Open Custom...'

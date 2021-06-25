@@ -225,26 +225,6 @@ void __fastcall TmainForm::xmlDeleteButtonClick(TObject *Sender)
 void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 {
 
-	  int finalRating;
-	  if(ratingOne->Checked) {
-		 finalRating = 1;
-	  }
-	  else if(ratingTwo->Checked) {
-		 finalRating = 2;
-	  }
-	  else if(ratingThree->Checked) {
-		 finalRating = 3;
-	  }
-	  else if(ratingFour->Checked) {
-		  finalRating = 4;
-	  }
-	  else if(ratingFive->Checked) {
-		  finalRating = 5;
-	  }
-	  else {
-		  finalRating = 0;
-	  }
-
 	// bookName to wchar_t
 	String narrowBookName = bookName->Text;
 	std::wstring wideBookName = std::wstring(narrowBookName.begin(), narrowBookName.end());
@@ -267,7 +247,7 @@ void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 
 
 	 std::vector<Book> books =
-	 {Book(bookNameCon,authorNameCon,authorSurnameCon,reviewCon,bookPageNum->Text.ToInt(),finalRating)};
+	 {Book(bookNameCon,authorNameCon,authorSurnameCon,reviewCon,bookPageNum->Text.ToInt();,3)};
 
 
 }

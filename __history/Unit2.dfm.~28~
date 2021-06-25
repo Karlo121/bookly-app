@@ -2,8 +2,8 @@ object mainForm: TmainForm
   Left = 0
   Top = 0
   Caption = 'Bookly'
-  ClientHeight = 450
-  ClientWidth = 1357
+  ClientHeight = 431
+  ClientWidth = 1042
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,7 +12,6 @@ object mainForm: TmainForm
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
-  Position = poDesigned
   OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
@@ -137,13 +136,22 @@ object mainForm: TmainForm
       TabOrder = 4
     end
     object ratingSubmitButton: TButton
-      Left = 84
-      Top = 51
+      Left = 12
+      Top = 47
       Width = 75
       Height = 25
       Caption = 'Prikazi'
       TabOrder = 5
       OnClick = ratingSubmitButtonClick
+    end
+    object ratingButton: TButton
+      Left = 102
+      Top = 47
+      Width = 123
+      Height = 25
+      Caption = 'More precise rating'
+      TabOrder = 6
+      OnClick = ratingButtonClick
     end
   end
   object displayField: TMemo
@@ -166,7 +174,7 @@ object mainForm: TmainForm
   end
   object reviewField: TMemo
     Left = 271
-    Top = 8
+    Top = 16
     Width = 234
     Height = 407
     Ctl3D = True
@@ -175,10 +183,10 @@ object mainForm: TmainForm
     ParentCtl3D = False
     TabOrder = 5
   end
-  object bookList: TListView
-    Left = 521
+  object ListView1: TListView
+    Left = 520
     Top = 8
-    Width = 760
+    Width = 513
     Height = 385
     Columns = <
       item
@@ -203,31 +211,12 @@ object mainForm: TmainForm
     ViewStyle = vsReport
   end
   object xmlLoadButton: TButton
-    Left = 521
+    Left = 520
     Top = 399
     Width = 75
     Height = 25
     Caption = 'Load XML'
     TabOrder = 7
-    OnClick = xmlLoadButtonClick
-  end
-  object xmlAddButton: TButton
-    Left = 602
-    Top = 399
-    Width = 75
-    Height = 25
-    Caption = 'Add To XML'
-    TabOrder = 8
-    OnClick = xmlAddButtonClick
-  end
-  object xmlDeleteButton: TButton
-    Left = 683
-    Top = 398
-    Width = 102
-    Height = 25
-    Caption = 'Delete from XML'
-    TabOrder = 9
-    OnClick = xmlDeleteButtonClick
   end
   object SaveDialog: TSaveDialog
     DefaultExt = '.txt'
@@ -264,16 +253,6 @@ object mainForm: TmainForm
       object Open1: TMenuItem
         Caption = 'Open...'
         OnClick = openButtonClick
-      end
-      object N1: TMenuItem
-        Caption = '-'
-      end
-      object SaveasCustom1: TMenuItem
-        Caption = 'Save as Custom...'
-        OnClick = SaveasCustom1Click
-      end
-      object OpenCustom1: TMenuItem
-        Caption = 'Open Custom...'
       end
     end
   end

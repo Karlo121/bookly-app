@@ -20,4 +20,3 @@ void __fastcall TreviewForm::reviewCompleteButtonClick(TObject *Sender)
    mainForm->reviewField->Lines->Add(reviewText->Text);
 }
 //---------------------------------------------------------------------------
-

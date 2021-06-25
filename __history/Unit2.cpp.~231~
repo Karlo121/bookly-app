@@ -225,26 +225,6 @@ void __fastcall TmainForm::xmlDeleteButtonClick(TObject *Sender)
 void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 {
 
-	  int finalRating;
-	  if(ratingOne->Checked) {
-		 finalRating = 1;
-	  }
-	  else if(ratingTwo->Checked) {
-		 finalRating = 2;
-	  }
-	  else if(ratingThree->Checked) {
-		 finalRating = 3;
-	  }
-	  else if(ratingFour->Checked) {
-		  finalRating = 4;
-	  }
-	  else if(ratingFive->Checked) {
-		  finalRating = 5;
-	  }
-	  else {
-		  finalRating = 0;
-	  }
-
 	// bookName to wchar_t
 	String narrowBookName = bookName->Text;
 	std::wstring wideBookName = std::wstring(narrowBookName.begin(), narrowBookName.end());
@@ -255,19 +235,9 @@ void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 	std::wstring wideAuthorName = std::wstring(narrowAuthorName.begin(), narrowAuthorName.end());
 	const wchar_t* authorNameCon = wideAuthorName.c_str();
 
-	// authorSurname to wchar_t
-	String narrowAuthorSurname = autorSurname->Text;
-	std::wstring wideAuthorSurname = std::wstring(narrowAuthorSurname.begin(), narrowAuthorSurname.end());
-	const wchar_t* authorSurnameCon = wideAuthorName.c_str();
-
-	// review to wchar_t
-	String narrowReview = reviewForm->reviewText->Text;
-	std::wstring wideReview = std::wstring(narrowReview.begin(), narrowReview.end());
-	const wchar_t* reviewCon = wideReview.c_str();
-
 
 	 std::vector<Book> books =
-	 {Book(bookNameCon,authorNameCon,authorSurnameCon,reviewCon,bookPageNum->Text.ToInt(),finalRating)};
+	 {Book(bookNameCon,authorNameCon,L"bookauthorsurname",L"epicreview",234,3)};
 
 
 }

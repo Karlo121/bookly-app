@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<name>Project Hail Mary</name>
+		<pageNum>355</pageNum>
+		<authorName>Andy</authorName>
+		<authorSurname>Weir</authorSurname>
+		<rating>5</rating>
+		<review>Good book, rocky is the best.</review>
+	</book>
+	<book>
+		<name>Song of Achilles</name>
+		<pageNum>355</pageNum>
+		<authorName>Madelline</authorName>
+		<authorSurname>Miller</authorSurname>
+		<rating>5</rating>
+		<review>Achilles it said, and beside it... Patroclus.</review>
+	</book>
+	<book><name>Alchemist</name><authorName>Paulo</authorName><authorSurname>Coelho</authorSurname><pageNum>127</pageNum><rating>2</rating><review>meh book</review></book></books>

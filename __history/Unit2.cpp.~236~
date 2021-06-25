@@ -225,8 +225,8 @@ void __fastcall TmainForm::xmlDeleteButtonClick(TObject *Sender)
 void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 {
 
-	  int finalRating;
-	  if(ratingOne->Checked) {
+
+if(ratingOne->Checked) {
 		 finalRating = 1;
 	  }
 	  else if(ratingTwo->Checked) {
@@ -267,7 +267,7 @@ void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 
 
 	 std::vector<Book> books =
-	 {Book(bookNameCon,authorNameCon,authorSurnameCon,reviewCon,bookPageNum->Text.ToInt(),finalRating)};
+	 {Book(bookNameCon,authorNameCon,authorSurnameCon,reviewCon,bookPageNum->Text.ToInt(),3)};
 
 
 }

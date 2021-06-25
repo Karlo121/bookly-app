@@ -66,7 +66,6 @@ __published:	// IDE-managed Components
 	void __fastcall xmlLoadButtonClick(TObject *Sender);
 	void __fastcall xmlAddButtonClick(TObject *Sender);
 	void __fastcall xmlDeleteButtonClick(TObject *Sender);
-	void __fastcall SaveasCustom1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TmainForm(TComponent* Owner);

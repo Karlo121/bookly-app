@@ -29,6 +29,9 @@ object reviewForm: TreviewForm
     ParentFont = False
     TabOrder = 0
     Zoom = 100
+    ExplicitTop = 33
+    ExplicitWidth = 635
+    ExplicitHeight = 258
   end
   object reviewToolBar: TToolBar
     Left = 0
@@ -41,6 +44,7 @@ object reviewForm: TreviewForm
     Images = imageListReview
     ShowCaptions = True
     TabOrder = 1
+    ExplicitWidth = 393
     object selectAllButton: TToolButton
       Left = 0
       Top = 0
@@ -177,18 +181,12 @@ object reviewForm: TreviewForm
       ImageIndex = 6
       ShortCut = 16457
     end
-    object Action1: TAction
-      Caption = 'Action1'
-    end
-    object Action2: TAction
-      Caption = 'Action2'
-    end
   end
   object imageListReview: TImageList
     Left = 312
     Top = 120
     Bitmap = {
-      494C010107000800040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107000800040010001000FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -456,7 +454,6 @@ object reviewForm: TreviewForm
       EFFDF6CFFE008000C7FFF6B7FE000000C3FBF6B7FE000000E3F7F8B780000000
       F1E7FE8F80000001F8CFFE3F80000003FC1FFF7F80000003FE3FFE3F80010003
       FC1FFEBF80030003F8CFFC9F80070FC3E1E7FDDF807F0003C3F3FDDF80FF8007
-      C7FDFDDF81FFF87FFFFFFFFFFFFFFFFF00000000000000000000000000000000
-      000000000000}
+      C7FDFDDF81FFF87FFFFFFFFFFFFFFFFF}
   end
 end

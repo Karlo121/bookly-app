@@ -45,15 +45,11 @@ __published:	// IDE-managed Components
 	TMenuItem *Open1;
 	TButton *reviewButton;
 	TMemo *reviewField;
+	TButton *ratingButton;
 	TMenuItem *ChangeFont;
 	TXMLDocument *XMLDocument1;
-	TListView *bookList;
+	TListView *ListView1;
 	TButton *xmlLoadButton;
-	TButton *xmlAddButton;
-	TButton *xmlDeleteButton;
-	TMenuItem *N1;
-	TMenuItem *SaveasCustom1;
-	TMenuItem *OpenCustom1;
 	void __fastcall ratingSubmitButtonClick(TObject *Sender);
 	void __fastcall saveButtonClick(TObject *Sender);
 	void __fastcall openButtonClick(TObject *Sender);
@@ -63,10 +59,6 @@ __published:	// IDE-managed Components
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ChangeFontClick(TObject *Sender);
-	void __fastcall xmlLoadButtonClick(TObject *Sender);
-	void __fastcall xmlAddButtonClick(TObject *Sender);
-	void __fastcall xmlDeleteButtonClick(TObject *Sender);
-	void __fastcall SaveasCustom1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TmainForm(TComponent* Owner);

@@ -1,0 +1,26 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit4H
+#define Unit4H
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ComCtrls.hpp>
+//---------------------------------------------------------------------------
+class TchangeFontForm : public TForm
+{
+__published:	// IDE-managed Components
+	TEdit *fontSizeField;
+	TUpDown *UpDown1;
+	TLabel *fontSizeLabel;
+	TButton *fontChangeDoneButton;
+private:	// User declarations
+public:		// User declarations
+	__fastcall TchangeFontForm(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TchangeFontForm *changeFontForm;
+//---------------------------------------------------------------------------
+#endif
