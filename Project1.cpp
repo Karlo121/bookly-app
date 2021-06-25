@@ -10,6 +10,7 @@ USEFORM("Unit2.cpp", mainForm);
 USEFORM("Unit3.cpp", ratingForm);
 USEFORM("Unit4.cpp", changeFontForm);
 USEFORM("Unit1.cpp", reviewForm);
+USEFORM("Unit5.cpp", dbForm);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -22,6 +23,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TreviewForm), &reviewForm);
 		Application->CreateForm(__classid(TratingForm), &ratingForm);
 		Application->CreateForm(__classid(TchangeFontForm), &changeFontForm);
+		Application->CreateForm(__classid(TdbForm), &dbForm);
 		Application->Run();
 	}
 	catch (Exception &exception)

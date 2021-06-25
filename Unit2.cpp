@@ -7,12 +7,14 @@
 #include "Unit1.h"
 #include "Unit3.h"
 #include "Unit4.h"
+#include "Unit5.h"
 #include "books.h"
 #include <registry.hpp>
 #include <wchar.h>
 #include <locale.h>
 #include <string.h>
 #include <vector>
+#include <memory>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -25,18 +27,22 @@ public:
 	 float version;
 
 	 myFileFormat() {
-		 wcsncpy(name, L"MyFileFormat", 15);
+		 wcsncpy(name, L"BooklyFileFormat", 15);
 		 version = 1.0;
 	 }
 };
 
 class Book{
 public:
-   wchar_t* name; wchar_t* authorName; wchar_t* authorSurname; wchar_t* review;
+   wchar_t name[25]; wchar_t authorName[25];
+	wchar_t authorSurname[25];
+   wchar_t review[200];
    int pageNum; int rating;
 
    Book() = default;
-   Book(const wchar_t* _name,const  wchar_t* _authorName, const wchar_t* _authorSurname, const wchar_t* _review, int _pageNum, int _rating)
+   Book(const wchar_t* _name,const  wchar_t* _authorName,
+		const wchar_t* _authorSurname, const wchar_t* _review,
+		int _pageNum, int _rating)
    {
 	   std::wcsncpy(name, _name, 25);
 	   std::wcsncpy(authorName, _authorName, 25);
@@ -180,6 +186,9 @@ void __fastcall TmainForm::xmlAddButtonClick(TObject *Sender)
 {
 
    int finalRating;
+     srand((unsigned int)time(NULL));
+    cout << rand() << endl;
+   ShowMessage(numberForId);
    _di_IXMLbooksType Books = Getbooks(XMLDocument1);
    _di_IXMLbookType Book = Books->Add();
 
@@ -209,6 +218,24 @@ void __fastcall TmainForm::xmlAddButtonClick(TObject *Sender)
    Book->review = reviewForm->reviewText->Text;
 
    XMLDocument1->SaveToFile(XMLDocument1->FileName);
+
+
+   dbForm->TBook->Insert();
+   dbForm->TBook->FieldByName("bookName")->AsString = bookName->Text;
+   dbForm->TBook->FieldByName("authorName")->AsString = autorName->Text;
+   dbForm->TBook->FieldByName("authorSurname")->AsString = autorSurname->Text;
+   dbForm->TBook->FieldByName("review")->AsString = reviewForm->reviewText->Text;
+   dbForm->TBook->FieldByName("rating")->AsInteger = finalRating;
+   dbForm->TBook->FieldByName("pageNum")->AsInteger = bookPageNum->Text.ToInt();
+   dbForm->TBook->FieldByName("authorId")->AsInteger = numberForId;
+   dbForm->TBook->Post();
+
+   dbForm->TAuthor->Insert();
+   dbForm->TAuthor->FieldByName("ID")->AsInteger = numberForId;
+   dbForm->TAuthor->FieldByName("authorName")->AsString = autorName->Text;
+   dbForm->TAuthor->FieldByName("authorName")->AsString = autorName->Text;
+   dbForm->TAuthor->FieldByName("authorSurname")->AsString = autorSurname->Text;
+   dbForm->TAuthor->Post();
 
 }
 //---------------------------------------------------------------------------
@@ -266,11 +293,27 @@ void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 	const wchar_t* reviewCon = wideReview.c_str();
 
 
-	 std::vector<Book> books =
-	 {Book(bookNameCon,authorNameCon,authorSurnameCon,reviewCon,bookPageNum->Text.ToInt(),finalRating)};
+	 Book books[1] =
+	 {Book(bookNameCon,authorNameCon,authorSurnameCon,reviewCon,3,4)};
 
+
+	 // save file format to header
+	 myFileFormat Header;
+	 std::unique_ptr<TMemoryStream> contactStream(new TMemoryStream);
+	 contactStream->Write(&Header, sizeof(myFileFormat));
+
+	 contactStream->Write(&books[0], sizeof(Book));
+
+	 contactStream->SaveToFile("books.bff");
 
 }
 //---------------------------------------------------------------------------
 
+
+
+void __fastcall TmainForm::Button1Click(TObject *Sender)
+{
+         dbForm->Show();
+}
+//---------------------------------------------------------------------------
 

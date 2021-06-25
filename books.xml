@@ -16,4 +16,5 @@
 		<rating>5</rating>
 		<review>Achilles it said, and beside it... Patroclus.</review>
 	</book>
-	<book><name>Alchemist</name><authorName>Paulo</authorName><authorSurname>Coelho</authorSurname><pageNum>127</pageNum><rating>2</rating><review>meh book</review></book></books>
+	<book><name>Alchemist</name><authorName>Paulo</authorName><authorSurname>Coelho</authorSurname><pageNum>127</pageNum><rating>2</rating><review>meh book</review></book><book><name>Machiavelli</name><authorName>Machiavelli</authorName><authorSurname>Machiavelli</authorSurname><pageNum>333</pageNum><rating>3</rating><review>MachiavelliMachiavelliMachiavelli</review></book><book><name>Cat</name><authorName>CatCat</authorName><authorSurname>CatMan</authorSurname><pageNum>323</pageNum><rating>3</rating><review>reviewText
+</review></book><book><name>c++ programiranje</name><authorName>Hacker</authorName><authorSurname>Man</authorSurname><pageNum>888</pageNum><rating>2</rating><review>mrzim cpp bla bla</review></book></books>

@@ -1,0 +1,288 @@
+object mainForm: TmainForm
+  Left = 0
+  Top = 0
+  Caption = 'Bookly'
+  ClientHeight = 450
+  ClientWidth = 1357
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  Position = poDesigned
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object bookBox: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 257
+    Height = 97
+    Caption = 'Knjiga'
+    TabOrder = 0
+    object bookNameLabel: TLabel
+      Left = 24
+      Top = 32
+      Width = 22
+      Height = 13
+      Caption = 'Ime:'
+    end
+    object bookPageNumLabel: TLabel
+      Left = 24
+      Top = 62
+      Width = 65
+      Height = 13
+      Caption = 'Broj Stranica:'
+    end
+    object bookName: TEdit
+      Left = 52
+      Top = 29
+      Width = 121
+      Height = 21
+      TabOrder = 0
+    end
+    object bookPageNum: TEdit
+      Left = 95
+      Top = 59
+      Width = 121
+      Height = 21
+      TabOrder = 1
+    end
+  end
+  object autorBox: TGroupBox
+    Left = 8
+    Top = 111
+    Width = 257
+    Height = 97
+    Caption = 'Autor'
+    TabOrder = 1
+    object autorNameLabel: TLabel
+      Left = 16
+      Top = 32
+      Width = 22
+      Height = 13
+      Caption = 'Ime:'
+    end
+    object autorSurnameLabel: TLabel
+      Left = 12
+      Top = 64
+      Width = 41
+      Height = 13
+      Caption = 'Prezime:'
+    end
+    object autorName: TEdit
+      Left = 59
+      Top = 29
+      Width = 121
+      Height = 21
+      TabOrder = 0
+    end
+    object autorSurname: TEdit
+      Left = 59
+      Top = 59
+      Width = 121
+      Height = 21
+      TabOrder = 1
+    end
+  end
+  object ratingBox: TGroupBox
+    Left = 8
+    Top = 214
+    Width = 257
+    Height = 82
+    Caption = 'Ocjena'
+    TabOrder = 2
+    object ratingOne: TRadioButton
+      Left = 24
+      Top = 24
+      Width = 33
+      Height = 17
+      Caption = '1'
+      TabOrder = 0
+    end
+    object ratingTwo: TRadioButton
+      Left = 63
+      Top = 24
+      Width = 33
+      Height = 17
+      Caption = '2'
+      TabOrder = 1
+    end
+    object ratingThree: TRadioButton
+      Left = 102
+      Top = 24
+      Width = 25
+      Height = 17
+      Caption = '3'
+      TabOrder = 2
+    end
+    object ratingFour: TRadioButton
+      Left = 144
+      Top = 24
+      Width = 33
+      Height = 17
+      Caption = '4'
+      TabOrder = 3
+    end
+    object ratingFive: TRadioButton
+      Left = 183
+      Top = 24
+      Width = 113
+      Height = 17
+      Caption = '5'
+      TabOrder = 4
+    end
+    object ratingSubmitButton: TButton
+      Left = 84
+      Top = 51
+      Width = 75
+      Height = 25
+      Caption = 'Prikazi'
+      TabOrder = 5
+      OnClick = ratingSubmitButtonClick
+    end
+  end
+  object displayField: TMemo
+    Left = 8
+    Top = 327
+    Width = 257
+    Height = 96
+    Lines.Strings = (
+      'displayField')
+    TabOrder = 3
+  end
+  object reviewButton: TButton
+    Left = 8
+    Top = 296
+    Width = 257
+    Height = 25
+    Caption = 'Write a review'
+    TabOrder = 4
+    OnClick = reviewButtonClick
+  end
+  object reviewField: TMemo
+    Left = 271
+    Top = 8
+    Width = 234
+    Height = 407
+    Ctl3D = True
+    Lines.Strings = (
+      'reviewField')
+    ParentCtl3D = False
+    TabOrder = 5
+  end
+  object bookList: TListView
+    Left = 521
+    Top = 8
+    Width = 760
+    Height = 385
+    Columns = <
+      item
+        Caption = 'Ime'
+      end
+      item
+        Caption = 'Autor Ime'
+      end
+      item
+        Caption = 'Autor Prezime'
+      end
+      item
+        Caption = 'Broj Stranica'
+      end
+      item
+        Caption = 'Ocjena'
+      end
+      item
+        Caption = 'Misljenje'
+      end>
+    TabOrder = 6
+    ViewStyle = vsReport
+  end
+  object xmlLoadButton: TButton
+    Left = 521
+    Top = 399
+    Width = 75
+    Height = 25
+    Caption = 'Load XML'
+    TabOrder = 7
+    OnClick = xmlLoadButtonClick
+  end
+  object xmlAddButton: TButton
+    Left = 602
+    Top = 399
+    Width = 75
+    Height = 25
+    Caption = 'Add To XML'
+    TabOrder = 8
+    OnClick = xmlAddButtonClick
+  end
+  object xmlDeleteButton: TButton
+    Left = 683
+    Top = 398
+    Width = 102
+    Height = 25
+    Caption = 'Delete from XML'
+    TabOrder = 9
+    OnClick = xmlDeleteButtonClick
+  end
+  object SaveDialog: TSaveDialog
+    DefaultExt = '.txt'
+    Filter = 'Text files (*.txt)|.txt'
+    Left = 168
+    Top = 360
+  end
+  object OpenDialog: TOpenDialog
+    DefaultExt = '.txt'
+    Filter = 'Text files (*.txt)|.txt'
+    Left = 32
+    Top = 360
+  end
+  object MainMenu1: TMainMenu
+    Left = 96
+    Top = 360
+    object File: TMenuItem
+      Caption = 'Application'
+      object ChangeFont: TMenuItem
+        Caption = 'Change Font/Size'
+        OnClick = ChangeFontClick
+      end
+      object Exit1: TMenuItem
+        Caption = 'Exit'
+        OnClick = ChangeFontClick
+      end
+    end
+    object File1: TMenuItem
+      Caption = 'File'
+      object SaveAs1: TMenuItem
+        Caption = 'Save As...'
+        OnClick = saveButtonClick
+      end
+      object Open1: TMenuItem
+        Caption = 'Open...'
+        OnClick = openButtonClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object SaveasCustom1: TMenuItem
+        Caption = 'Save as Custom...'
+        OnClick = SaveasCustom1Click
+      end
+      object OpenCustom1: TMenuItem
+        Caption = 'Open Custom...'
+      end
+    end
+  end
+  object XMLDocument1: TXMLDocument
+    Active = True
+    FileName = 
+      'C:\Users\Comp\Desktop\Faks\Napredne Tehnike Programiranja\bookly' +
+      '-app\books.xml'
+    Left = 656
+    Top = 168
+  end
+end
