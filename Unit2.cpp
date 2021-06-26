@@ -8,6 +8,7 @@
 #include "Unit3.h"
 #include "Unit4.h"
 #include "Unit5.h"
+#include "Unit6.h"
 #include "books.h"
 #include <registry.hpp>
 #include <wchar.h>
@@ -15,6 +16,8 @@
 #include <string.h>
 #include <vector>
 #include <memory>
+#include <random>
+#include <time.h>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -35,7 +38,7 @@ public:
 class Book{
 public:
    wchar_t name[25]; wchar_t authorName[25];
-	wchar_t authorSurname[25];
+   wchar_t authorSurname[25];
    wchar_t review[200];
    int pageNum; int rating;
 
@@ -60,52 +63,7 @@ __fastcall TmainForm::TmainForm(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TmainForm::ratingSubmitButtonClick(TObject *Sender)
-{
 
-	  displayField->Lines->Add("Book name: " + bookName->Text);
-	  displayField->Lines->Add("Book length: " + bookPageNum->Text);
-	  displayField->Lines->Add("Author: " + autorName->Text + autorSurname->Text);
-	  if(ratingOne->Checked) {
-		  displayField->Lines->Add("Rating: 1 ");
-	  }
-	  else if(ratingTwo->Checked) {
-		 displayField->Lines->Add("Rating: 2 ");
-	  }
-	  else if(ratingThree->Checked) {
-		 displayField->Lines->Add("Rating: 3");
-	  }
-	  else if(ratingFour->Checked) {
-		  displayField->Lines->Add("Rating: 4");
-	  }
-	  else if(ratingFive->Checked) {
-		  displayField->Lines->Add("Rating: 5");
-	  }
-	  else {
-		  ShowMessage("No rating selected...");
-	  }
-
-}
-//---------------------------------------------------------------------------
-
-
-void __fastcall TmainForm::saveButtonClick(TObject *Sender)
-{
-	if(SaveDialog ->Execute() == true) {
-	   displayField->Lines->SaveToFile(SaveDialog->FileName) ;
-	}
-
-
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TmainForm::openButtonClick(TObject *Sender)
-{
-	if(OpenDialog ->Execute() == true) {
-	   displayField->Lines->LoadFromFile(OpenDialog->FileName) ;
-	}
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TmainForm::Exit1Click(TObject *Sender)
 {
@@ -164,32 +122,19 @@ void __fastcall TmainForm::ChangeFontClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TmainForm::xmlLoadButtonClick(TObject *Sender)
-{
-   _di_IXMLbooksType Books = Getbooks(XMLDocument1);
-
-   bookList->Items->Clear();
-   for(int i = 0; i < Books->Count; i++){
-	  bookList->Items->Add();
-
-	  bookList->Items->Item[i]->Caption = Books->book[i]->name;
-	  bookList->Items->Item[i]->SubItems->Add(Books->book[i]->authorName);
-	  bookList->Items->Item[i]->SubItems->Add(Books->book[i]->authorSurname);
-	  bookList->Items->Item[i]->SubItems->Add(Books->book[i]->pageNum);
-	  bookList->Items->Item[i]->SubItems->Add(Books->book[i]->rating);
-	  bookList->Items->Item[i]->SubItems->Add(Books->book[i]->review);
-   }
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TmainForm::xmlAddButtonClick(TObject *Sender)
 {
 
    int finalRating;
-     srand((unsigned int)time(NULL));
-    cout << rand() << endl;
-   ShowMessage(numberForId);
-   _di_IXMLbooksType Books = Getbooks(XMLDocument1);
+
+
+   srand(time(NULL));
+   printf("%d", rand());
+   int numberForId = rand();
+
+
+   _di_IXMLbooksType Books = Getbooks(xmlForm->XMLDocument1);
    _di_IXMLbookType Book = Books->Add();
 
    Book->name = bookName->Text;
@@ -217,7 +162,7 @@ void __fastcall TmainForm::xmlAddButtonClick(TObject *Sender)
    Book->rating = finalRating;
    Book->review = reviewForm->reviewText->Text;
 
-   XMLDocument1->SaveToFile(XMLDocument1->FileName);
+   xmlForm->XMLDocument1->SaveToFile(xmlForm->XMLDocument1->FileName);
 
 
    dbForm->TBook->Insert();
@@ -227,11 +172,11 @@ void __fastcall TmainForm::xmlAddButtonClick(TObject *Sender)
    dbForm->TBook->FieldByName("review")->AsString = reviewForm->reviewText->Text;
    dbForm->TBook->FieldByName("rating")->AsInteger = finalRating;
    dbForm->TBook->FieldByName("pageNum")->AsInteger = bookPageNum->Text.ToInt();
-   dbForm->TBook->FieldByName("authorId")->AsInteger = numberForId;
+   dbForm->TBook->FieldByName("authorNum")->AsInteger = numberForId;
    dbForm->TBook->Post();
 
    dbForm->TAuthor->Insert();
-   dbForm->TAuthor->FieldByName("ID")->AsInteger = numberForId;
+   dbForm->TAuthor->FieldByName("authorNum")->AsInteger = numberForId;
    dbForm->TAuthor->FieldByName("authorName")->AsString = autorName->Text;
    dbForm->TAuthor->FieldByName("authorName")->AsString = autorName->Text;
    dbForm->TAuthor->FieldByName("authorSurname")->AsString = autorSurname->Text;
@@ -241,13 +186,6 @@ void __fastcall TmainForm::xmlAddButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TmainForm::xmlDeleteButtonClick(TObject *Sender)
-{
-   _di_IXMLbooksType Books = Getbooks(XMLDocument1);
-   Books->Delete(bookList->ItemIndex);
-   XMLDocument1->SaveToFile(XMLDocument1->FileName);
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 {
@@ -313,7 +251,13 @@ void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 
 void __fastcall TmainForm::Button1Click(TObject *Sender)
 {
-         dbForm->Show();
+		 dbForm->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TmainForm::xmlViewOpenButtonClick(TObject *Sender)
+{
+	  xmlForm->Show();
 }
 //---------------------------------------------------------------------------
 

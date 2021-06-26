@@ -65,3 +65,9 @@ void __fastcall TdbForm::authorSearchButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+
+
+
+
+
+

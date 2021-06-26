@@ -2,8 +2,8 @@ object dbForm: TdbForm
   Left = 0
   Top = 0
   Caption = 'Database'
-  ClientHeight = 533
-  ClientWidth = 1092
+  ClientHeight = 525
+  ClientWidth = 1102
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,46 +13,6 @@ object dbForm: TdbForm
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 8
-    Top = 290
-    Width = 50
-    Height = 13
-    Caption = 'bookName'
-    FocusControl = DBEdit1
-  end
-  object Label2: TLabel
-    Left = 214
-    Top = 290
-    Width = 59
-    Height = 13
-    Caption = 'authorName'
-    FocusControl = DBEdit2
-  end
-  object Label3: TLabel
-    Left = 420
-    Top = 290
-    Width = 74
-    Height = 13
-    Caption = 'authorSurname'
-    FocusControl = DBEdit3
-  end
-  object Label4: TLabel
-    Left = 8
-    Top = 336
-    Width = 32
-    Height = 13
-    Caption = 'review'
-    FocusControl = DBMemo1
-  end
-  object Label5: TLabel
-    Left = 288
-    Top = 336
-    Width = 45
-    Height = 13
-    Caption = 'pageNum'
-    FocusControl = DBEdit4
-  end
   object Label6: TLabel
     Left = 160
     Top = 720
@@ -61,51 +21,107 @@ object dbForm: TdbForm
     Caption = 'rating'
     FocusControl = DBEdit5
   end
+  object Label1: TLabel
+    Left = 631
+    Top = 62
+    Width = 50
+    Height = 13
+    Caption = 'bookName'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 774
+    Top = 62
+    Width = 59
+    Height = 13
+    Caption = 'authorName'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 774
+    Top = 108
+    Width = 74
+    Height = 13
+    Caption = 'authorSurname'
+    FocusControl = DBEdit3
+  end
+  object Label5: TLabel
+    Left = 631
+    Top = 108
+    Width = 45
+    Height = 13
+    Caption = 'pageNum'
+    FocusControl = DBEdit4
+  end
   object Label7: TLabel
-    Left = 288
-    Top = 382
+    Left = 700
+    Top = 108
     Width = 28
     Height = 13
     Caption = 'rating'
     FocusControl = DBEdit6
   end
   object Label8: TLabel
-    Left = 640
-    Top = 290
-    Width = 11
-    Height = 13
-    Caption = 'ID'
-    FocusControl = DBEdit7
-  end
-  object Label9: TLabel
-    Left = 679
-    Top = 290
+    Left = 427
+    Top = 344
     Width = 59
     Height = 13
     Caption = 'authorName'
-    FocusControl = DBEdit8
+    FocusControl = DBEdit7
   end
-  object Label10: TLabel
-    Left = 792
-    Top = 290
+  object Label9: TLabel
+    Left = 427
+    Top = 384
     Width = 74
     Height = 13
     Caption = 'authorSurname'
-    FocusControl = DBEdit9
+    FocusControl = DBEdit8
   end
-  object Label11: TLabel
-    Left = 887
-    Top = 290
+  object Label10: TLabel
+    Left = 427
+    Top = 424
     Width = 76
     Height = 13
     Caption = 'authorBirthyear'
+    FocusControl = DBEdit9
+  end
+  object Label11: TLabel
+    Left = 427
+    Top = 464
+    Width = 37
+    Height = 13
+    Caption = 'country'
     FocusControl = DBEdit10
+  end
+  object GroupBox2: TGroupBox
+    Left = 408
+    Top = 328
+    Width = 185
+    Height = 193
+    Caption = 'Edit Author Info'
+    TabOrder = 20
+  end
+  object groupboxreview: TGroupBox
+    Left = 615
+    Top = 179
+    Width = 450
+    Height = 105
+    Caption = 'Edit and Read your Review'
+    TabOrder = 19
+  end
+  object GroupBox1: TGroupBox
+    Left = 615
+    Top = 40
+    Width = 298
+    Height = 133
+    Caption = 'Edit Book Info'
+    TabOrder = 18
   end
   object DBGrid1: TDBGrid
     Left = 8
     Top = 40
     Width = 601
-    Height = 244
+    Height = 266
     DataSource = DBook
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -117,57 +133,57 @@ object dbForm: TdbForm
       item
         Expanded = False
         FieldName = 'ID'
-        Width = 70
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'bookName'
-        Width = 70
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'authorName'
-        Width = 70
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'authorSurname'
-        Width = 70
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'review'
-        Width = 70
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'pageNum'
-        Width = 70
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'rating'
-        Width = 70
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'authorId'
-        Width = 70
+        FieldName = 'authorNum'
+        Width = 80
         Visible = True
       end>
   end
   object DBGrid2: TDBGrid
     Left = 615
-    Top = 40
-    Width = 458
-    Height = 244
+    Top = 304
+    Width = 482
+    Height = 217
     DataSource = DAuthor
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
@@ -179,7 +195,7 @@ object dbForm: TdbForm
       item
         Expanded = False
         FieldName = 'ID'
-        Width = 43
+        Width = 80
         Visible = True
       end
       item
@@ -198,52 +214,19 @@ object dbForm: TdbForm
         Expanded = False
         FieldName = 'authorBirthyear'
         Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'authorNum'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'country'
+        Width = 80
+        Visible = True
       end>
-  end
-  object DBEdit1: TDBEdit
-    Left = 8
-    Top = 309
-    Width = 200
-    Height = 21
-    DataField = 'bookName'
-    DataSource = DBook
-    TabOrder = 2
-  end
-  object DBEdit2: TDBEdit
-    Left = 214
-    Top = 309
-    Width = 200
-    Height = 21
-    DataField = 'authorName'
-    DataSource = DBook
-    TabOrder = 3
-  end
-  object DBEdit3: TDBEdit
-    Left = 420
-    Top = 309
-    Width = 181
-    Height = 21
-    DataField = 'authorSurname'
-    DataSource = DBook
-    TabOrder = 4
-  end
-  object DBMemo1: TDBMemo
-    Left = 8
-    Top = 355
-    Width = 265
-    Height = 113
-    DataField = 'review'
-    DataSource = DBook
-    TabOrder = 5
-  end
-  object DBEdit4: TDBEdit
-    Left = 288
-    Top = 355
-    Width = 134
-    Height = 21
-    DataField = 'pageNum'
-    DataSource = DBook
-    TabOrder = 6
   end
   object DBEdit5: TDBEdit
     Left = 160
@@ -252,68 +235,23 @@ object dbForm: TdbForm
     Height = 21
     DataField = 'rating'
     DataSource = DBook
-    TabOrder = 7
-  end
-  object DBEdit6: TDBEdit
-    Left = 288
-    Top = 401
-    Width = 134
-    Height = 21
-    DataField = 'rating'
-    DataSource = DBook
-    TabOrder = 8
+    TabOrder = 2
   end
   object Button1: TButton
-    Left = 454
-    Top = 370
+    Left = 937
+    Top = 96
     Width = 112
     Height = 40
     Caption = 'Delete Record'
-    TabOrder = 9
+    TabOrder = 3
     OnClick = Button1Click
-  end
-  object DBEdit7: TDBEdit
-    Left = 640
-    Top = 309
-    Width = 33
-    Height = 21
-    DataField = 'ID'
-    DataSource = DAuthor
-    TabOrder = 10
-  end
-  object DBEdit8: TDBEdit
-    Left = 679
-    Top = 309
-    Width = 90
-    Height = 21
-    DataField = 'authorName'
-    DataSource = DAuthor
-    TabOrder = 11
-  end
-  object DBEdit9: TDBEdit
-    Left = 792
-    Top = 309
-    Width = 89
-    Height = 21
-    DataField = 'authorSurname'
-    DataSource = DAuthor
-    TabOrder = 12
-  end
-  object DBEdit10: TDBEdit
-    Left = 896
-    Top = 309
-    Width = 57
-    Height = 21
-    DataField = 'authorBirthyear'
-    DataSource = DAuthor
-    TabOrder = 13
   end
   object nameSearch: TEdit
     Left = 24
     Top = 13
     Width = 121
     Height = 21
-    TabOrder = 14
+    TabOrder = 4
   end
   object searchButton: TButton
     Left = 151
@@ -321,7 +259,7 @@ object dbForm: TdbForm
     Width = 106
     Height = 21
     Caption = 'Search by Name'
-    TabOrder = 15
+    TabOrder = 5
     OnClick = searchButtonClick
   end
   object authorSearch: TEdit
@@ -329,7 +267,7 @@ object dbForm: TdbForm
     Top = 13
     Width = 121
     Height = 21
-    TabOrder = 16
+    TabOrder = 6
   end
   object authorSearchButton: TButton
     Left = 390
@@ -337,16 +275,106 @@ object dbForm: TdbForm
     Width = 187
     Height = 23
     Caption = 'Search by Author Name/Surname'
-    TabOrder = 17
+    TabOrder = 7
     OnClick = authorSearchButtonClick
+  end
+  object DBEdit1: TDBEdit
+    Left = 631
+    Top = 81
+    Width = 137
+    Height = 21
+    DataField = 'bookName'
+    DataSource = DBook
+    TabOrder = 8
+  end
+  object DBEdit2: TDBEdit
+    Left = 774
+    Top = 81
+    Width = 120
+    Height = 21
+    DataField = 'authorName'
+    DataSource = DBook
+    TabOrder = 9
+  end
+  object DBEdit3: TDBEdit
+    Left = 774
+    Top = 127
+    Width = 120
+    Height = 21
+    DataField = 'authorSurname'
+    DataSource = DBook
+    TabOrder = 10
+  end
+  object DBMemo1: TDBMemo
+    Left = 631
+    Top = 195
+    Width = 418
+    Height = 78
+    DataField = 'review'
+    DataSource = DBook
+    TabOrder = 11
+  end
+  object DBEdit4: TDBEdit
+    Left = 631
+    Top = 127
+    Width = 33
+    Height = 21
+    DataField = 'pageNum'
+    DataSource = DBook
+    TabOrder = 12
+  end
+  object DBEdit6: TDBEdit
+    Left = 700
+    Top = 127
+    Width = 33
+    Height = 21
+    DataField = 'rating'
+    DataSource = DBook
+    TabOrder = 13
+  end
+  object DBEdit7: TDBEdit
+    Left = 427
+    Top = 360
+    Width = 150
+    Height = 21
+    DataField = 'authorName'
+    DataSource = DAuthor
+    TabOrder = 14
+  end
+  object DBEdit8: TDBEdit
+    Left = 427
+    Top = 400
+    Width = 150
+    Height = 21
+    DataField = 'authorSurname'
+    DataSource = DAuthor
+    TabOrder = 15
+  end
+  object DBEdit9: TDBEdit
+    Left = 427
+    Top = 440
+    Width = 150
+    Height = 21
+    DataField = 'authorBirthyear'
+    DataSource = DAuthor
+    TabOrder = 16
+  end
+  object DBEdit10: TDBEdit
+    Left = 427
+    Top = 480
+    Width = 150
+    Height = 21
+    DataField = 'country'
+    DataSource = DAuthor
+    TabOrder = 17
   end
   object TBook: TADOTable
     Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'books'
-    Left = 304
-    Top = 480
+    Left = 216
+    Top = 224
     object TBookID: TAutoIncField
       FieldName = 'ID'
       ReadOnly = True
@@ -373,37 +401,44 @@ object dbForm: TdbForm
     object TBookrating: TIntegerField
       FieldName = 'rating'
     end
-    object TBookauthorId: TIntegerField
-      FieldName = 'authorId'
+    object TBookauthorNum: TIntegerField
+      FieldName = 'authorNum'
     end
   end
   object ADOConnection1: TADOConnection
     Connected = True
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Comp\Deskt' +
-      'op\Faks\Napredne Tehnike Programiranja\bookly-app\booklydb.mdb;P' +
-      'ersist Security Info=False'
+      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Us' +
+      'ers\Comp\Desktop\Faks\Napredne Tehnike Programiranja\bookly-app\' +
+      'booklydb.mdb;Mode=Share Deny None;Persist Security Info=False;Je' +
+      't OLEDB:System database="";Jet OLEDB:Registry Path="";Jet OLEDB:' +
+      'Database Password="";Jet OLEDB:Engine Type=5;Jet OLEDB:Database ' +
+      'Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLEDB:Glo' +
+      'bal Bulk Transactions=1;Jet OLEDB:New Database Password="";Jet O' +
+      'LEDB:Create System Database=False;Jet OLEDB:Encrypt Database=Fal' +
+      'se;Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet OLEDB:Compac' +
+      't Without Replica Repair=False;Jet OLEDB:SFP=False'
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 392
-    Top = 447
+    Left = 80
+    Top = 207
   end
   object DBook: TDataSource
     DataSet = TBook
-    Left = 416
-    Top = 487
+    Left = 152
+    Top = 223
   end
   object TAuthor: TADOTable
     Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
-    IndexFieldNames = 'ID'
-    MasterFields = 'authorId'
+    IndexFieldNames = 'authorNum'
+    MasterFields = 'authorNum'
     MasterSource = DBook
     TableName = 'authors'
-    Left = 464
-    Top = 439
+    Left = 216
+    Top = 175
     object TAuthorID: TAutoIncField
       FieldName = 'ID'
       ReadOnly = True
@@ -419,11 +454,18 @@ object dbForm: TdbForm
     object TAuthorauthorBirthyear: TIntegerField
       FieldName = 'authorBirthyear'
     end
+    object TAuthorcountry: TWideStringField
+      FieldName = 'country'
+      Size = 255
+    end
+    object TAuthorauthorNum: TIntegerField
+      FieldName = 'authorNum'
+    end
   end
   object DAuthor: TDataSource
     DataSet = TAuthor
-    Left = 520
-    Top = 463
+    Left = 144
+    Top = 175
   end
   object frxReport1: TfrxReport
     Version = '6.2.1'
@@ -440,8 +482,8 @@ object dbForm: TdbForm
       'begin'
       ''
       'end.')
-    Left = 776
-    Top = 448
+    Left = 464
+    Top = 200
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -625,8 +667,8 @@ object dbForm: TdbForm
     CloseDataSource = False
     DataSet = TBook
     BCDToCurrency = False
-    Left = 840
-    Top = 416
+    Left = 392
+    Top = 200
   end
   object frxPDFExport1: TfrxPDFExport
     FileName = 'Untitled.pdf'
@@ -652,7 +694,7 @@ object dbForm: TdbForm
     CenterWindow = False
     PrintScaling = False
     PdfA = False
-    Left = 904
-    Top = 384
+    Left = 320
+    Top = 192
   end
 end

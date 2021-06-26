@@ -17,4 +17,7 @@
 		<review>Achilles it said, and beside it... Patroclus.</review>
 	</book>
 	<book><name>Alchemist</name><authorName>Paulo</authorName><authorSurname>Coelho</authorSurname><pageNum>127</pageNum><rating>2</rating><review>meh book</review></book><book><name>Machiavelli</name><authorName>Machiavelli</authorName><authorSurname>Machiavelli</authorSurname><pageNum>333</pageNum><rating>3</rating><review>MachiavelliMachiavelliMachiavelli</review></book><book><name>Cat</name><authorName>CatCat</authorName><authorSurname>CatMan</authorSurname><pageNum>323</pageNum><rating>3</rating><review>reviewText
-</review></book><book><name>c++ programiranje</name><authorName>Hacker</authorName><authorSurname>Man</authorSurname><pageNum>888</pageNum><rating>2</rating><review>mrzim cpp bla bla</review></book></books>
+</review></book><book><name>c++ programiranje</name><authorName>Hacker</authorName><authorSurname>Man</authorSurname><pageNum>888</pageNum><rating>2</rating><review>mrzim cpp bla bla</review></book><book><name>The Humans</name><authorName>Matt</authorName><authorSurname>Haig</authorSurname><pageNum>321</pageNum><rating>4</rating><review>not bad
+</review></book><book><name>The Humans</name><authorName>Matt</authorName><authorSurname>Haig</authorSurname><pageNum>321</pageNum><rating>4</rating><review>not bad
+</review></book><book><name>Rami</name><authorName>Rami</authorName><authorSurname>Balon</authorSurname><pageNum>432</pageNum><rating>5</rating><review>reviewText
+</review></book></books>
