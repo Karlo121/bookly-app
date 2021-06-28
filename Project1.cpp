@@ -6,12 +6,12 @@
 //---------------------------------------------------------------------------
 #include <Vcl.Styles.hpp>
 #include <Vcl.Themes.hpp>
-USEFORM("Unit2.cpp", mainForm);
 USEFORM("Unit3.cpp", ratingForm);
 USEFORM("Unit4.cpp", changeFontForm);
 USEFORM("Unit5.cpp", dbForm);
-USEFORM("Unit1.cpp", reviewForm);
 USEFORM("Unit6.cpp", xmlForm);
+USEFORM("Unit2.cpp", mainForm);
+USEFORM("Unit1.cpp", reviewForm);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {

@@ -16,9 +16,9 @@ class TxmlForm : public TForm
 {
 __published:	// IDE-managed Components
 	TListView *bookList;
-	TXMLDocument *XMLDocument1;
 	TButton *xmlDeleteButton;
 	TButton *xmlLoadButton;
+	TXMLDocument *XMLDocument1;
 	void __fastcall xmlLoadButtonClick(TObject *Sender);
 	void __fastcall xmlDeleteButtonClick(TObject *Sender);
 private:	// User declarations

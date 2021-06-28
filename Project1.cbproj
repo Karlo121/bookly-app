@@ -138,7 +138,7 @@
     <ItemGroup>
         <CppCompile Include="books.cpp">
             <DependentOn>books.h</DependentOn>
-            <BuildOrder>6</BuildOrder>
+            <BuildOrder>8</BuildOrder>
         </CppCompile>
         <CppCompile Include="Project1.cpp">
             <BuildOrder>0</BuildOrder>

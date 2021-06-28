@@ -3,10 +3,10 @@
 #include <vcl.h>
 #pragma hdrstop
 
-#include "Unit1.h"
+#include "MainUnit.h"
 #include "Unit3.h"
 #include "Unit4.h"
-#include "Unit5.h"
+#include "DatabaseUnit.h"
 #include "Unit6.h"
 #include "books.h"
 //---------------------------------------------------------------------------
