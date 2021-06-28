@@ -63,7 +63,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;vcldb.lib;adortl.lib;frx26.lib;fs26.lib;vclx.lib;vclimg.lib;frxDB26.lib;fsDB26.lib;frxe26.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;vcldb.lib;adortl.lib;frx26.lib;fs26.lib;vclx.lib;vclimg.lib;frxDB26.lib;fsDB26.lib;frxe26.lib;vclwinx.lib;soaprtl.lib;inet.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
@@ -116,7 +116,7 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
-        <LinkPackageImports>rtl.bpi;vcl.bpi;xmlrtl.bpi;dbrtl.bpi;vcldb.bpi;adortl.bpi;vclx.bpi;vclimg.bpi</LinkPackageImports>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;xmlrtl.bpi;dbrtl.bpi;vcldb.bpi;adortl.bpi;vclx.bpi;vclimg.bpi;vclwinx.bpi;soaprtl.bpi;inet.bpi</LinkPackageImports>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <FinalOutputDir>.</FinalOutputDir>
@@ -140,6 +140,22 @@
             <DependentOn>books.h</DependentOn>
             <BuildOrder>8</BuildOrder>
         </CppCompile>
+        <CppCompile Include="DatabaseUnit.cpp">
+            <Form>dbForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DatabaseUnit.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="isbnservice.cpp">
+            <DependentOn>isbnservice.h</DependentOn>
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MainUnit.cpp">
+            <Form>mainForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>MainUnit.h</DependentOn>
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Project1.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
@@ -147,17 +163,11 @@
             <BuildOrder>1</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
-        <CppCompile Include="Unit1.cpp">
+        <CppCompile Include="ReviewUnit.cpp">
             <Form>reviewForm</Form>
             <FormType>dfm</FormType>
-            <DependentOn>Unit1.h</DependentOn>
+            <DependentOn>ReviewUnit.h</DependentOn>
             <BuildOrder>3</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="Unit2.cpp">
-            <Form>mainForm</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>Unit2.h</DependentOn>
-            <BuildOrder>2</BuildOrder>
         </CppCompile>
         <CppCompile Include="Unit3.cpp">
             <Form>ratingForm</Form>
@@ -171,12 +181,6 @@
             <DependentOn>Unit4.h</DependentOn>
             <BuildOrder>5</BuildOrder>
         </CppCompile>
-        <CppCompile Include="Unit5.cpp">
-            <Form>dbForm</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>Unit5.h</DependentOn>
-            <BuildOrder>7</BuildOrder>
-        </CppCompile>
         <CppCompile Include="Unit6.cpp">
             <Form>xmlForm</Form>
             <FormType>dfm</FormType>
@@ -185,10 +189,10 @@
         </CppCompile>
         <FormResources Include="Unit3.dfm"/>
         <FormResources Include="Unit4.dfm"/>
-        <FormResources Include="Unit5.dfm"/>
+        <FormResources Include="DatabaseUnit.dfm"/>
         <FormResources Include="Unit6.dfm"/>
-        <FormResources Include="Unit2.dfm"/>
-        <FormResources Include="Unit1.dfm"/>
+        <FormResources Include="MainUnit.dfm"/>
+        <FormResources Include="ReviewUnit.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

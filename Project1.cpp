@@ -8,10 +8,10 @@
 #include <Vcl.Themes.hpp>
 USEFORM("Unit3.cpp", ratingForm);
 USEFORM("Unit4.cpp", changeFontForm);
-USEFORM("Unit5.cpp", dbForm);
+USEFORM("DatabaseUnit.cpp", dbForm);
 USEFORM("Unit6.cpp", xmlForm);
-USEFORM("Unit2.cpp", mainForm);
-USEFORM("Unit1.cpp", reviewForm);
+USEFORM("MainUnit.cpp", mainForm);
+USEFORM("ReviewUnit.cpp", reviewForm);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {

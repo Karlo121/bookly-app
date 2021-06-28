@@ -2,8 +2,8 @@ object dbForm: TdbForm
   Left = 0
   Top = 0
   Caption = 'Database View'
-  ClientHeight = 796
-  ClientWidth = 1102
+  ClientHeight = 528
+  ClientWidth = 1101
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -84,12 +84,6 @@ object dbForm: TdbForm
     Height = 13
     Caption = 'country'
     FocusControl = DBEdit10
-  end
-  object SpeedButton1: TSpeedButton
-    Left = 152
-    Top = 184
-    Width = 23
-    Height = 22
   end
   object GroupBox2: TGroupBox
     Left = 408

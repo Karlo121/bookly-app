@@ -74,7 +74,6 @@ __published:	// IDE-managed Components
 	TGroupBox *groupboxreview;
 	TGroupBox *GroupBox2;
 	TWideStringField *TBookGenre;
-	TSpeedButton *SpeedButton1;
 	TADOTable *TGenre;
 	TDataSource *DGenre;
 	TAutoIncField *TGenreID;

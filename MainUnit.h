@@ -57,6 +57,8 @@ __published:	// IDE-managed Components
 	TDBLookupComboBox *genreSelector;
 	TEdit *yearField;
 	TLabel *Label2;
+	TEdit *isbnField;
+	TLabel *Label3;
 	void __fastcall Exit1Click(TObject *Sender);
 	void __fastcall reviewButtonClick(TObject *Sender);
 	void __fastcall ratingButtonClick(TObject *Sender);

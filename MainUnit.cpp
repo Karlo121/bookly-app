@@ -176,6 +176,7 @@ void __fastcall TmainForm::xmlAddButtonClick(TObject *Sender)
    dbForm->TBook->FieldByName("pageNum")->AsInteger = bookPageNum->Text.ToInt();
    dbForm->TBook->FieldByName("authorNum")->AsInteger = numberForId;
    dbForm->TBook->FieldByName("Genre")->AsString = genreSelector->Text;
+   dbForm->TBook->FieldByName("ISBN")->AsString = isbnField->Text;
    dbForm->TBook->Post();
 
    dbForm->TAuthor->Insert();
@@ -184,6 +185,7 @@ void __fastcall TmainForm::xmlAddButtonClick(TObject *Sender)
    dbForm->TAuthor->FieldByName("authorName")->AsString = autorName->Text;
    dbForm->TAuthor->FieldByName("authorSurname")->AsString = autorSurname->Text;
    dbForm->TAuthor->Post();
+
 
 }
 //---------------------------------------------------------------------------
