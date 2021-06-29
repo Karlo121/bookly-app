@@ -59,9 +59,10 @@ __published:	// IDE-managed Components
 	TLabel *Label2;
 	TEdit *isbnField;
 	TLabel *Label3;
+	TMenuItem *DownloadBookly1;
+	TButton *qotdButton;
 	void __fastcall Exit1Click(TObject *Sender);
 	void __fastcall reviewButtonClick(TObject *Sender);
-	void __fastcall ratingButtonClick(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ChangeFontClick(TObject *Sender);
@@ -69,6 +70,8 @@ __published:	// IDE-managed Components
 	void __fastcall SaveasCustom1Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall xmlViewOpenButtonClick(TObject *Sender);
+	void __fastcall DownloadBookly1Click(TObject *Sender);
+	void __fastcall qotdButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TmainForm(TComponent* Owner);

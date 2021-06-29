@@ -1,0 +1,24 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "QuoteUnit.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TquoteForm *quoteForm;
+//---------------------------------------------------------------------------
+__fastcall TquoteForm::TquoteForm(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TquoteForm::getQuoteButtonClick(TObject *Sender)
+{
+	  TStringStream* ss = new TStringStream();
+	  IdHTTP1->Get("https://quotes.rest/qod.xml?", ss);
+	  ShowMessage(ss->DataString);
+      delete ss;
+}
+//---------------------------------------------------------------------------

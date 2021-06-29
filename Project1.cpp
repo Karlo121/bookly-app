@@ -6,12 +6,14 @@
 //---------------------------------------------------------------------------
 #include <Vcl.Styles.hpp>
 #include <Vcl.Themes.hpp>
-USEFORM("Unit3.cpp", ratingForm);
-USEFORM("Unit4.cpp", changeFontForm);
-USEFORM("DatabaseUnit.cpp", dbForm);
-USEFORM("Unit6.cpp", xmlForm);
-USEFORM("MainUnit.cpp", mainForm);
+USEFORM("XmlUnit.cpp", xmlForm);
 USEFORM("ReviewUnit.cpp", reviewForm);
+USEFORM("QuoteUnit.cpp", quoteForm);
+USEFORM("MainUnit.cpp", mainForm);
+USEFORM("DownloadUnit.cpp", dlForm);
+USEFORM("DatabaseUnit.cpp", dbForm);
+USEFORM("IsbnUnit.cpp", isbnForm);
+USEFORM("FontChangeUnit.cpp", changeFontForm);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -22,10 +24,12 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		TStyleManager::TrySetStyle("Material Oxford Blue");
 		Application->CreateForm(__classid(TmainForm), &mainForm);
 		Application->CreateForm(__classid(TreviewForm), &reviewForm);
-		Application->CreateForm(__classid(TratingForm), &ratingForm);
 		Application->CreateForm(__classid(TchangeFontForm), &changeFontForm);
 		Application->CreateForm(__classid(TdbForm), &dbForm);
 		Application->CreateForm(__classid(TxmlForm), &xmlForm);
+		Application->CreateForm(__classid(TisbnForm), &isbnForm);
+		Application->CreateForm(__classid(TdlForm), &dlForm);
+		Application->CreateForm(__classid(TquoteForm), &quoteForm);
 		Application->Run();
 	}
 	catch (Exception &exception)

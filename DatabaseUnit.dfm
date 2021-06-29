@@ -75,7 +75,7 @@ object dbForm: TdbForm
     Width = 76
     Height = 13
     Caption = 'authorBirthyear'
-    FocusControl = DBEdit9
+    FocusControl = birthyearField
   end
   object Label11: TLabel
     Left = 427
@@ -164,8 +164,8 @@ object dbForm: TdbForm
       end>
   end
   object DBGrid2: TDBGrid
-    Left = 615
-    Top = 304
+    Left = 611
+    Top = 303
     Width = 482
     Height = 217
     DataSource = DAuthor
@@ -325,7 +325,7 @@ object dbForm: TdbForm
     DataSource = DAuthor
     TabOrder = 14
   end
-  object DBEdit9: TDBEdit
+  object birthyearField: TDBEdit
     Left = 427
     Top = 440
     Width = 150
@@ -381,7 +381,7 @@ object dbForm: TdbForm
     OnClick = filterGenreButtonClick
   end
   object isbnField: TDBMemo
-    Left = 32
+    Left = 72
     Top = 344
     Width = 89
     Height = 17
@@ -390,21 +390,46 @@ object dbForm: TdbForm
     TabOrder = 24
   end
   object checkISBN: TButton
-    Left = 16
-    Top = 367
-    Width = 129
+    Left = 56
+    Top = 398
+    Width = 113
     Height = 25
-    Caption = 'Check if ISBN valid'
+    Caption = 'Validate ISBN Offline'
     TabOrder = 25
     OnClick = checkISBNClick
+  end
+  object openIsbnFormButton: TButton
+    Left = 24
+    Top = 367
+    Width = 185
+    Height = 25
+    Caption = ' Validate ISBN with TCP or UDP'
+    TabOrder = 26
+    OnClick = openIsbnFormButtonClick
+  end
+  object calcAgeButton: TButton
+    Left = 320
+    Top = 438
+    Width = 82
+    Height = 25
+    Caption = 'Calculate Age'
+    TabOrder = 27
+    OnClick = calcAgeButtonClick
+  end
+  object ageField: TEdit
+    Left = 282
+    Top = 440
+    Width = 32
+    Height = 21
+    TabOrder = 28
   end
   object TBook: TADOTable
     Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'books'
-    Left = 248
-    Top = 400
+    Left = 752
+    Top = 352
     object TBookID: TAutoIncField
       DisplayWidth = 10
       FieldName = 'ID'
@@ -477,13 +502,13 @@ object dbForm: TdbForm
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 32
-    Top = 439
+    Left = 632
+    Top = 391
   end
   object DBook: TDataSource
     DataSet = TBook
-    Left = 104
-    Top = 415
+    Left = 696
+    Top = 351
   end
   object TAuthor: TADOTable
     Active = True
@@ -493,8 +518,8 @@ object dbForm: TdbForm
     MasterFields = 'authorNum'
     MasterSource = DBook
     TableName = 'authors'
-    Left = 192
-    Top = 415
+    Left = 752
+    Top = 407
     object TAuthorID: TAutoIncField
       FieldName = 'ID'
       ReadOnly = True
@@ -520,8 +545,8 @@ object dbForm: TdbForm
   end
   object DAuthor: TDataSource
     DataSet = TAuthor
-    Left = 200
-    Top = 343
+    Left = 696
+    Top = 407
   end
   object frxReport1: TfrxReport
     Version = '6.2.1'
@@ -538,8 +563,8 @@ object dbForm: TdbForm
       'begin'
       ''
       'end.')
-    Left = 320
-    Top = 400
+    Left = 952
+    Top = 360
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -723,8 +748,8 @@ object dbForm: TdbForm
     CloseDataSource = False
     DataSet = TBook
     BCDToCurrency = False
-    Left = 336
-    Top = 464
+    Left = 1016
+    Top = 368
   end
   object frxPDFExport1: TfrxPDFExport
     FileName = 'Untitled.pdf'
@@ -750,16 +775,16 @@ object dbForm: TdbForm
     CenterWindow = False
     PrintScaling = False
     PdfA = False
-    Left = 336
-    Top = 344
+    Left = 1040
+    Top = 416
   end
   object TGenre: TADOTable
     Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'genres'
-    Left = 176
-    Top = 472
+    Left = 752
+    Top = 464
     object TGenreID: TAutoIncField
       FieldName = 'ID'
       ReadOnly = True
@@ -771,7 +796,7 @@ object dbForm: TdbForm
   end
   object DGenre: TDataSource
     DataSet = TGenre
-    Left = 120
-    Top = 472
+    Left = 696
+    Top = 464
   end
 end

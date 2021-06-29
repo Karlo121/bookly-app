@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ImyWebServiceservice" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/">
+  <message name="ageCalc0Request">
+    <part name="birthyear" type="xs:int"/>
+  </message>
+  <message name="ageCalc0Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <portType name="ImyWebService">
+    <operation name="ageCalc">
+      <input message="tns:ageCalc0Request"/>
+      <output message="tns:ageCalc0Response"/>
+    </operation>
+  </portType>
+  <binding name="ImyWebServicebinding" type="tns:ImyWebService">
+    <binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="ageCalc">
+      <operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:myWebService-ImyWebService#ageCalc" style="rpc"/>
+      <input>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:myWebService-ImyWebService"/>
+      </input>
+      <output>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:myWebService-ImyWebService"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ImyWebServiceservice">
+    <port name="ImyWebServicePort" binding="tns:ImyWebServicebinding">
+      <address xmlns="http://schemas.xmlsoap.org/wsdl/soap/" location="http://localhost:8080/soap/ImyWebService"/>
+    </port>
+  </service>
+</definitions>
+

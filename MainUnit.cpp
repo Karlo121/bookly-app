@@ -5,10 +5,11 @@
 
 #include "MainUnit.h"
 #include "ReviewUnit.h"
-#include "Unit3.h"
-#include "Unit4.h"
+#include "FontChangeUnit.h"
 #include "DatabaseUnit.h"
-#include "Unit6.h"
+#include "DownloadUnit.h"
+#include "QuoteUnit.h"
+#include "XmlUnit.h"
 #include "books.h"
 #include <registry.hpp>
 #include <wchar.h>
@@ -78,13 +79,6 @@ void __fastcall TmainForm::reviewButtonClick(TObject *Sender)
 	reviewForm->Show();
 }
 //---------------------------------------------------------------------------
-
-void __fastcall TmainForm::ratingButtonClick(TObject *Sender)
-{
-	   ratingForm->ShowModal();
-}
-//---------------------------------------------------------------------------
-
 
 void __fastcall TmainForm::FormClose(TObject *Sender, TCloseAction &Action)
 {
@@ -268,4 +262,17 @@ void __fastcall TmainForm::xmlViewOpenButtonClick(TObject *Sender)
 
 
 
+
+void __fastcall TmainForm::DownloadBookly1Click(TObject *Sender)
+{
+   dlForm->Show();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TmainForm::qotdButtonClick(TObject *Sender)
+{
+      quoteForm->Show();
+}
+//---------------------------------------------------------------------------
 

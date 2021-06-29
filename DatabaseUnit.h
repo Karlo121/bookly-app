@@ -67,7 +67,7 @@ __published:	// IDE-managed Components
 	TLabel *Label9;
 	TDBEdit *DBEdit8;
 	TLabel *Label10;
-	TDBEdit *DBEdit9;
+	TDBEdit *birthyearField;
 	TLabel *Label11;
 	TDBEdit *DBEdit10;
 	TGroupBox *GroupBox1;
@@ -86,6 +86,9 @@ __published:	// IDE-managed Components
 	TWideMemoField *TBookISBN;
 	TDBMemo *isbnField;
 	TButton *checkISBN;
+	TButton *openIsbnFormButton;
+	TButton *calcAgeButton;
+	TEdit *ageField;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall searchButtonClick(TObject *Sender);
 	void __fastcall authorSearchButtonClick(TObject *Sender);
@@ -93,6 +96,8 @@ __published:	// IDE-managed Components
 	void __fastcall sortButtonPageNumClick(TObject *Sender);
 	void __fastcall filterGenreButtonClick(TObject *Sender);
 	void __fastcall checkISBNClick(TObject *Sender);
+	void __fastcall openIsbnFormButtonClick(TObject *Sender);
+	void __fastcall calcAgeButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TdbForm(TComponent* Owner);

@@ -4,7 +4,7 @@
 #pragma hdrstop
 
 #include "ReviewUnit.h"
-#include "Unit2.h"
+#include "MainUnit.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"

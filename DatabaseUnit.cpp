@@ -5,6 +5,9 @@
 
 #include "DatabaseUnit.h"
 #include "isbnservice.h"
+#include "IsbnUnit.h"
+#include "ImyWebServiceWSDL.h"
+#include "QuoteThreadUnit.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "frxClass"
@@ -102,6 +105,21 @@ void __fastcall TdbForm::checkISBNClick(TObject *Sender)
 	 else {
 		 ShowMessage("Invalid ISBN");
 	 }
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TdbForm::openIsbnFormButtonClick(TObject *Sender)
+{
+    isbnForm->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TdbForm::calcAgeButtonClick(TObject *Sender)
+{
+    _di_ImyWebService webService = GetImyWebService();
+   ageField->Text = webService->ageCalc(birthyearField->Text.ToInt());
+
 }
 //---------------------------------------------------------------------------
 
