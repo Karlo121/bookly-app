@@ -26,7 +26,7 @@ object changeFontForm: TchangeFontForm
     Font.Style = []
     ParentFont = False
   end
-  object Label1: TLabel
+  object changeFontLabel: TLabel
     Left = 26
     Top = 32
     Width = 126

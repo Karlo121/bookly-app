@@ -2,8 +2,8 @@ object dlForm: TdlForm
   Left = 0
   Top = 0
   Caption = 'Download Bookly'
-  ClientHeight = 232
-  ClientWidth = 572
+  ClientHeight = 146
+  ClientWidth = 422
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,14 +21,14 @@ object dlForm: TdlForm
     TabOrder = 0
     Text = 'https://www.dropbox.com/s/oo7a6d2jtkqmcbl/booklydb.mdb?dl=0'
   end
-  object Button1: TButton
-    Left = 383
-    Top = 38
+  object downloadButton: TButton
+    Left = 95
+    Top = 8
     Width = 75
     Height = 25
     Caption = 'Download'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = downloadButtonClick
   end
   object ProgressBar1: TProgressBar
     Left = 48
@@ -38,18 +38,18 @@ object dlForm: TdlForm
     Smooth = True
     TabOrder = 2
   end
-  object Cancel: TButton
-    Left = 464
-    Top = 38
+  object dlCancelButton: TButton
+    Left = 264
+    Top = 8
     Width = 75
     Height = 25
     Caption = 'Cancel'
     TabOrder = 3
-    OnClick = CancelClick
+    OnClick = dlCancelButtonClick
   end
   object Button2: TButton
-    Left = 112
-    Top = 160
+    Left = 48
+    Top = 90
     Width = 75
     Height = 25
     Caption = '10 kb/s'
@@ -57,8 +57,8 @@ object dlForm: TdlForm
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 224
-    Top = 160
+    Left = 176
+    Top = 90
     Width = 75
     Height = 25
     Caption = '50 kb/s'
@@ -66,8 +66,8 @@ object dlForm: TdlForm
     OnClick = Button3Click
   end
   object Button4: TButton
-    Left = 336
-    Top = 160
+    Left = 302
+    Top = 90
     Width = 75
     Height = 25
     Caption = '200 kb/s'
@@ -92,8 +92,8 @@ object dlForm: TdlForm
     Request.Ranges.Units = 'bytes'
     Request.Ranges = <>
     HTTPOptions = [hoForceEncodeParams]
-    Left = 152
-    Top = 96
+    Left = 96
+    Top = 128
   end
   object OpenSSL: TIdSSLIOHandlerSocketOpenSSL
     Intercept = Throttler
@@ -103,14 +103,14 @@ object dlForm: TdlForm
     SSLOptions.Mode = sslmUnassigned
     SSLOptions.VerifyMode = []
     SSLOptions.VerifyDepth = 0
-    Left = 216
-    Top = 96
+    Left = 168
+    Top = 128
   end
   object Throttler: TIdInterceptThrottler
     BitsPerSec = 0
     RecvBitsPerSec = 0
     SendBitsPerSec = 0
-    Left = 296
-    Top = 104
+    Left = 232
+    Top = 128
   end
 end

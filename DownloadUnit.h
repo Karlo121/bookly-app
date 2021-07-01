@@ -27,19 +27,19 @@ class TdlForm : public TForm
 {
 __published:	// IDE-managed Components
 	TEdit *downloadUrlField;
-	TButton *Button1;
+	TButton *downloadButton;
 	TIdHTTP *Download;
 	TIdSSLIOHandlerSocketOpenSSL *OpenSSL;
 	TProgressBar *ProgressBar1;
-	TButton *Cancel;
+	TButton *dlCancelButton;
 	TIdInterceptThrottler *Throttler;
 	TButton *Button2;
 	TButton *Button3;
 	TButton *Button4;
-	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall downloadButtonClick(TObject *Sender);
 	void __fastcall DownloadWorkBegin(TObject *ASender, TWorkMode AWorkMode, __int64 AWorkCountMax);
 	void __fastcall DownloadWork(TObject *ASender, TWorkMode AWorkMode, __int64 AWorkCount);
-	void __fastcall CancelClick(TObject *Sender);
+	void __fastcall dlCancelButtonClick(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
 	void __fastcall Button4Click(TObject *Sender);

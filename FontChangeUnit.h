@@ -16,7 +16,7 @@ __published:	// IDE-managed Components
 	TUpDown *UpDown1;
 	TLabel *fontSizeLabel;
 	TButton *fontChangeDoneButton;
-	TLabel *Label1;
+	TLabel *changeFontLabel;
 	TEdit *fontStyleField;
 	TStaticText *StaticText1;
 private:	// User declarations

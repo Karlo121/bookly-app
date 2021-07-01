@@ -21,8 +21,14 @@ TdbForm *dbForm;
 __fastcall TdbForm::TdbForm(TComponent* Owner)
 	: TForm(Owner)
 {
-
-
+    TIniFile* ini = new TIniFile(GetCurrentDir() + "\\settings.ini");
+	Left = ini->ReadInteger("Database Form", "Left", 0);
+	Height = ini->ReadInteger("Database Form", "Height", 600);
+	Top = ini->ReadInteger("Database Form", "Top", 0);
+	Width = ini->ReadInteger("Database Form", "Width", 1117);
+	Font->Height = ini->ReadInteger("Database Form", "Font.Height", Font->Height);
+	Font->Name = ini->ReadString("Database Form", "Font.Name", Font->Name);
+	delete ini;
 }
 //---------------------------------------------------------------------------
 void __fastcall TdbForm::deleteRecordButtonClick(TObject *Sender)
@@ -125,6 +131,23 @@ void __fastcall TdbForm::calcAgeButtonClick(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
+
+
+
+void __fastcall TdbForm::FormClose(TObject *Sender, TCloseAction &Action)
+{
+   TIniFile* ini = new TIniFile(GetCurrentDir() + "\\settings.ini");
+
+   ini->WriteInteger("Database Form", "Left", Left);
+   ini->WriteInteger("Database Form", "Top", Top);
+   ini->WriteInteger("Database Form", "Width", Width);
+   ini->WriteInteger("Database Form", "Height", Height);
+   ini->WriteInteger("Database Form", "Font.Height",Font->Height);
+   ini->WriteString("Database Form", "Font.Name", Font->Name);
+   delete ini;
+}
+//---------------------------------------------------------------------------
+
 
 
 

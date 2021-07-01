@@ -21,6 +21,7 @@ __published:	// IDE-managed Components
 	TXMLDocument *XMLDocument1;
 	void __fastcall xmlLoadButtonClick(TObject *Sender);
 	void __fastcall xmlDeleteButtonClick(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TxmlForm(TComponent* Owner);

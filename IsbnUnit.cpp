@@ -16,6 +16,16 @@ TisbnForm *isbnForm;
 __fastcall TisbnForm::TisbnForm(TComponent* Owner)
 	: TForm(Owner)
 {
+   TIniFile* ini = new TIniFile(GetCurrentDir() + "\\settings.ini");
+   // main forma
+   Left = ini->ReadInteger("ISBN Form", "Left", 0);
+   Top = ini->ReadInteger("ISBN Form", "Top", 0);
+   Width = ini->ReadInteger("ISBN Form", "Width", 640);
+   Height = ini->ReadInteger("ISBN Form", "Height", 500);
+   Font->Height = ini->ReadInteger("ISBN Form", "Font.Height", Font->Height);
+   Font->Name = ini->ReadString("ISBN Form", "Font.Name", Font->Name);
+
+   delete ini;
 
 }
 //---------------------------------------	------------------------------------
@@ -52,4 +62,18 @@ void __fastcall TisbnForm::checkUdpButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+
+void __fastcall TisbnForm::FormClose(TObject *Sender, TCloseAction &Action)
+{
+   TIniFile* ini = new TIniFile(GetCurrentDir() + "\\settings.ini");
+   // Ini settings for main form
+   ini->WriteInteger("ISBN Form", "Left", Left);
+   ini->WriteInteger("ISBN Form", "Top", Top);
+   ini->WriteInteger("ISBN Form", "Width", Width);
+   ini->WriteInteger("ISBN Form", "Height", Height);
+   ini->WriteInteger("ISBN Form", "Font.Height", Font->Height);
+   ini->WriteString("ISBN Form", "Font.Name", Font->Name);
+   delete ini;
+}
+//---------------------------------------------------------------------------
 

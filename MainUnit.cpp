@@ -45,7 +45,6 @@ public:
    wchar_t review[200];
    int pageNum; int rating;
 
-
    Book() = default;
    Book(const wchar_t* _name,const  wchar_t* _authorName,
 		const wchar_t* _authorSurname, const wchar_t* _review,
@@ -86,238 +85,238 @@ __fastcall TmainForm::TmainForm(TComponent* Owner)
   FreeLibrary(myFlags);
 
   translation["xmlAddButton"] = {
-	 {
+	  {
 		  {"EN", "Insert Record"},
 		  {"HR", "Unesi zapis"}
-	 }
+	  }
   };
   translation["reviewButton"] = {
-	 {
+	  {
 		  {"EN", "Write a review"},
 		  {"HR", "Zapisi misljenje"}
-	 }
+	  }
   };
   translation["bookBox"] = {
-	 {
+	  {
 		  {"EN", "Book"},
 		  {"HR", "Knjiga"}
-	 }
+	  }
   };
   translation["bookNameLabel"] = {
-	 {
+	  {
 		  {"EN", "Name:"},
 		  {"HR", "Ime:"}
-	 }
+	  }
   };
   translation["bookPageNumLabel"] = {
-	 {
+	  {
 		  {"EN", "Page num:"},
 		  {"HR", "Broj stranica:"}
-	 }
+	  }
   };
   translation["genreLabel"] = {
-	 {
+	  {
 		  {"EN", "Genre:"},
 		  {"HR", "Žanr:"}
-	 }
+	  }
   };
   translation["autorBox"] = {
-	 {
+	  {
 		  {"EN", "Author:"},
 		  {"HR", "Autor:"}
-	 }
+	  }
   };
   translation["autorNameLabel"] = {
-	 {
+	  {
 		  {"EN", "Name:"},
 		  {"HR", "Ime:"}
-	 }
+	  }
   };
   translation["autorSurnameLabel"] = {
-	 {
+	  {
 		  {"EN", "Surname:"},
 		  {"HR", "Prezime:"}
-	 }
+	  }
   };
   translation["birthYearLabel"] = {
-	 {
+	  {
 		  {"EN", "Birth year:"},
 		  {"HR", "Godina roð.:"}
-	 }
+	  }
   };
   translation["ratingBox"] = {
-	 {
+	  {
 		  {"EN", "Rating"},
 		  {"HR", "Ocjena"}
-	 }
+	  }
   };
   translation["seeDataButton"] = {
-	 {
+	  {
 		  {"EN", "See Data"},
 		  {"HR", "Pregled zapisa"}
-	 }
+	  }
   };
   translation["xmlViewOpenButton"] = {
-	 {
+	  {
 		  {"EN", "See XML"},
 		  {"HR", "Pregled XML-a"}
-	 }
+	  }
   };
   translation["qotdButton"] = {
-	 {
+	  {
 		  {"EN", "Quote of the day"},
 		  {"HR", "Citat dana"}
-	 }
+	  }
   };
   translation["appBarButton"] = {
-	 {
+	  {
 		  {"EN", "Application"},
 		  {"HR", "Aplikacija"}
-	 }
+	  }
   };
   translation["DownloadBookly1"] = {
-	 {
+	  {
 		  {"EN", "Download Bookly database"},
 		  {"HR", "Preuzmi Bookly bazu podataka"}
-	 }
+	  }
   };
   translation["ChangeFont"] = {
-	 {
+	  {
 		  {"EN", "Change Font/Size"},
 		  {"HR", "Promijeni Font"}
-	 }
+	  }
   };
   translation["Exit1"] = {
-	 {
+	  {
 		  {"EN", "Exit"},
 		  {"HR", "Izlaz"}
-	 }
+	  }
   };
   translation["SaveasCustom1"] = {
-	 {
+	  {
 		  {"EN", "Save as Custom..."},
 		  {"HR", "Spremi kao prilagoðen format..."}
-	 }
+	  }
   };
   translation["OpenCustom1"] = {
-	 {
+	  {
 		  {"EN", "Open Custom..."},
 		  {"HR", "Otvori prilagoðeni format..."}
-	 }
+	  }
   };
   translation["changeFontLabel"] = {
-	 {
+		 {
 		  {"EN", "Change your Font"},
 		  {"HR", "Promijenite Font"}
-	 }
+	  }
   };
   translation["fontSizeLabel"] = {
-	 {
+	  {
 		  {"EN", "Change your Font size"},
 		  {"HR", "Promijenite velicinu Fonta"}
-	 }
+	  }
   };
   translation["fontChangeDoneButton"] = {
-	 {
+	  {
 		  {"EN", "Done"},
 		  {"HR", "Gotovo"}
-	 }
+	  }
   };
   translation["searchButton"] = {
-	 {
+	  {
 		  {"EN", "Search By Name"},
 		  {"HR", "Pretrazi po imenu"}
-	 }
+	  }
   };
   translation["authorSearchButton"] = {
-	 {
+	  {
 		  {"EN", "Search by Author Name/Surname"},
 		  {"HR", "Pretrazi po autorovom imenu i prezimenu"}
-	 }
+	  }
   };
   translation["GroupBoxDatabase1"] = {
-	 {
+	  {
 		  {"EN", "Edit Book Info"},
 		  {"HR", "Uredi informacije knjige"}
-	 }
+	  }
   };
   translation["GroupBoxDatabase2"] = {
-	 {
+	  {
 		  {"EN", "Edit Author Info"},
 		  {"HR", "Uredi informacije o autoru"}
-	 }
+	  }
   };
   translation["calcAgeButton"] = {
-	 {
+	  {
 		  {"EN", "Calculate age"},
 		  {"HR", "Izracunaj godine"}
-	 }
+	  }
   };
   translation["sortButton"] = {
-	 {
+	  {
 		  {"EN", "Sort by rating"},
 		  {"HR", "Sortiraj po ocjenama"}
-	 }
+	  }
   };
   translation["sortButtonPageNum"] = {
-	 {
+	  {
 		  {"EN", "Sort By Page Number"},
 		  {"HR", "Sortiraj po stranicama"}
-	 }
+	  }
   };
   translation["filterGenreButton"] = {
-	 {
+	  {
 		  {"EN", "Filter by genre"},
 		  {"HR", "Filtriraj po žanru"}
-	 }
+	  }
   };
   translation["openIsbnFormButton"] = {
-	 {
+	  {
 		  {"EN", "Validate ISBN with TCP or UDP"},
 		  {"HR", "Validiraj ISBN pomocu TCP-a ili UDP-a"}
-	 }
+	  }
   };
   translation["checkISBN"] = {
-	 {
+	  {
 		  {"EN", "Validate ISBN Offline"},
 		  {"HR", "Validiraj ISBN Offline"}
-	 }
+	  }
   };
   translation["deleteRecordButton"] = {
-	 {
+	  {
 		  {"EN", "Delete record"},
 		  {"HR", "Izbrisi Zapis"}
-	 }
+	  }
   };
   translation["deleteRecordButton"] = {
-	 {
+	  {
 		  {"EN", "Delete record"},
 		  {"HR", "Izbrisi Zapis"}
-	 }
+	  }
   };
   translation["xmlLoadButton"] = {
-	 {
+	  {
 		  {"EN", "Load XML"},
 		  {"HR", "Prikazi XML"}
-	 }
+	  }
   };
   translation["xmlDeleteButton"] = {
-	 {
+	  {
 		  {"EN", "Delete from XML"},
 		  {"HR", "Izbrisi iz XML-a"}
-	 }
+	  }
   };
   translation["isbnLoadButton"] = {
-	{
+	  {
 		{"EN", "Load Selected ISBN"},
 		{"HR", "Dohvati ISBN"}
-	}
+	  }
   };
   translation["checkIsbnButton"] = {
-	 {
+	  {
 		 {"EN", "Check ISBN TCP"},
 		 {"HR", "Provijeri ISBN preko TCP-a"}
-	 }
+	  }
   };
   translation["checkUdpButton"] = {
 	  {
@@ -349,12 +348,81 @@ __fastcall TmainForm::TmainForm(TComponent* Owner)
 		  {"HR", "Preuzmi"}
 	  }
   };
-   translation["dlCancelButton"] = {
+  translation["dlCancelButton"] = {
 	  {
 		  {"EN", "Cancel"},
 		  {"HR", "Prekini"}
 	  }
   };
+  translation["authorBirthyearLabelDb"] = {
+	  {
+		  {"EN", "Birthyear:"},
+		  {"HR", "Godina roð:"}
+	  }
+  };
+  translation["countryLabelDb"] = {
+	  {
+		  {"EN", "Country:"},
+		  {"HR", "Država:"}
+	  }
+  };
+  translation["authorSurnameLabelDb"] = {
+	  {
+		  {"EN", "Author Surname:"},
+		  {"HR", "Prezime autora:"}
+	  }
+  };
+  translation["authorNameLabelDb"] = {
+	  {
+		  {"EN", "Author Name:"},
+		  {"HR", "Ime autora:"}
+	  }
+  };
+  translation["bookNameLabelDb"] = {
+	  {
+		  {"EN", "Book name:"},
+		  {"HR", "Ime knjige:"}
+	  }
+  };
+  translation["ratingLabelDb"] = {
+	  {
+		  {"EN", "Rating:"},
+		  {"HR", "Ocjena:"}
+	  }
+  };
+  translation["pageNumLabelDb"] = {
+	  {
+		  {"EN", "Page number:"},
+		  {"HR", "Broj stranica:"}
+	  }
+  };
+  translation["bookAuthorSurnameLabelDb"] = {
+	  {
+		  {"EN", "Author Surname:"},
+		  {"HR", "Prezime autora:"}
+	  }
+  };
+  translation["bookAuthorLabelDb"] = {
+	  {
+		  {"EN", "Author Name:"},
+		  {"HR", "Ime autora:"}
+	  }
+  };
+  translation["groupBoxReviewDb"] = {
+	  {
+		  {"EN", "Edit and Read your Review"},
+		  {"HR", "Uredi i èitaj:"}
+	  }
+  };
+  translation["getQuoteButton"] = {
+	  {
+		  {"EN", "Get Quote of the Day in XML Format"},
+		  {"HR", "Uèitaj dnevni citat:"}
+	  }
+  };
+
+
+
 }
 //---------------------------------------------------------------------------
 
@@ -377,41 +445,28 @@ void __fastcall TmainForm::reviewButtonClick(TObject *Sender)
 void __fastcall TmainForm::FormClose(TObject *Sender, TCloseAction &Action)
 {
    TIniFile* ini = new TIniFile(GetCurrentDir() + "\\settings.ini");
-   // Ini settings for main form
+
    ini->WriteInteger("Main Form", "Left", Left);
    ini->WriteInteger("Main Form", "Top", Top);
    ini->WriteInteger("Main Form", "Width", Width);
    ini->WriteInteger("Main Form", "Height", Height);
    ini->WriteInteger("Main Form", "Font.Height", Font->Height);
    ini->WriteString("Main Form", "Font.Name", Font->Name);
-   // Ini settings for db form
-   ini->WriteInteger("Database Form", "Left", dbForm->Left);
-   ini->WriteInteger("Database Form", "Top", dbForm->Top);
-   ini->WriteInteger("Database Form", "Width", dbForm->Width);
-   ini->WriteInteger("Database Form", "Height", dbForm->Height);
-   ini->WriteInteger("Database Form", "Font.Height",Font->Height);
-   ini->WriteString("Database Form", "Font.Name", Font->Name);
    delete ini;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TmainForm::FormCreate(TObject *Sender)
 {
+   reviewField->Text = "";
    TIniFile* ini = new TIniFile(GetCurrentDir() + "\\settings.ini");
-   // main forma
+
    Left = ini->ReadInteger("Main Form", "Left", 0);
    Top = ini->ReadInteger("Main Form", "Top", 0);
    Width = ini->ReadInteger("Main Form", "Width", 640);
    Height = ini->ReadInteger("Main Form", "Height", 500);
    Font->Height = ini->ReadInteger("Main Form", "Font.Height", Font->Height);
    Font->Name = ini->ReadString("Main Form", "Font.Name", Font->Name);
-   // db forma
-   dbForm->Left = ini->ReadInteger("Database Form", "Left", 0);
-   dbForm->Top = ini->ReadInteger("Database Form", "Top", 0);
-   dbForm->Width = ini->ReadInteger("Database Form", "Width", 1117);
-   dbForm->Height = ini->ReadInteger("Database Form", "Height", 565);
-//   dbForm->Font->Height = ini->ReadInteger("Database Form", "Font.Height", Font->Height);
-//   dbForm->Font->Name = ini->ReadString("Database Form", "Font.Name", Font->Name);
    delete ini;
 }
 //---------------------------------------------------------------------------

@@ -46,16 +46,12 @@ __published:	// IDE-managed Components
 	TIntegerField *TBookpageNum;
 	TIntegerField *TBookrating;
 	TIntegerField *TBookauthorNum;
-	TLabel *Label1;
+	TLabel *bookNameLabelDb;
 	TDBEdit *DBEdit1;
-	TLabel *Label2;
-	TDBEdit *DBEdit2;
-	TLabel *Label3;
-	TDBEdit *DBEdit3;
 	TDBMemo *DBMemo1;
-	TLabel *Label5;
+	TLabel *pageNumLabelDb;
 	TDBEdit *DBEdit4;
-	TLabel *Label7;
+	TLabel *ratingLabelDb;
 	TDBEdit *DBEdit6;
 	TAutoIncField *TAuthorID;
 	TWideStringField *TAuthorauthorName;
@@ -63,16 +59,16 @@ __published:	// IDE-managed Components
 	TIntegerField *TAuthorauthorBirthyear;
 	TWideStringField *TAuthorcountry;
 	TIntegerField *TAuthorauthorNum;
-	TLabel *Label8;
+	TLabel *authorNameLabelDb;
 	TDBEdit *DBEdit7;
-	TLabel *Label9;
+	TLabel *authorSurnameLabelDb;
 	TDBEdit *DBEdit8;
-	TLabel *Label10;
+	TLabel *authorBirthyearLabelDb;
 	TDBEdit *birthyearField;
-	TLabel *Label11;
+	TLabel *countryLabelDb;
 	TDBEdit *DBEdit10;
 	TGroupBox *GroupBoxDatabase1;
-	TGroupBox *groupboxreview;
+	TGroupBox *groupBoxReviewDb;
 	TGroupBox *GroupBoxDatabase2;
 	TWideStringField *TBookGenre;
 	TADOTable *TGenre;
@@ -90,6 +86,10 @@ __published:	// IDE-managed Components
 	TButton *openIsbnFormButton;
 	TButton *calcAgeButton;
 	TEdit *ageField;
+	TLabel *bookAuthorLabelDb;
+	TDBEdit *DBEdit2;
+	TLabel *bookAuthorSurnameLabelDb;
+	TDBEdit *DBEdit3;
 	void __fastcall deleteRecordButtonClick(TObject *Sender);
 	void __fastcall searchButtonClick(TObject *Sender);
 	void __fastcall authorSearchButtonClick(TObject *Sender);
@@ -99,6 +99,7 @@ __published:	// IDE-managed Components
 	void __fastcall checkISBNClick(TObject *Sender);
 	void __fastcall openIsbnFormButtonClick(TObject *Sender);
 	void __fastcall calcAgeButtonClick(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TdbForm(TComponent* Owner);

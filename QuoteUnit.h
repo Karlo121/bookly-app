@@ -38,6 +38,7 @@ __published:	// IDE-managed Components
 	TLinkControlToField *LinkControlToField1;
 	TButton *Button1;
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TquoteForm(TComponent* Owner);

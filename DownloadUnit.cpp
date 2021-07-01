@@ -12,9 +12,10 @@ TdlForm *dlForm;
 __fastcall TdlForm::TdlForm(TComponent* Owner)
 	: TForm(Owner)
 {
+
 }
 //---------------------------------------------------------------------------
-void __fastcall TdlForm::Button1Click(TObject *Sender)
+void __fastcall TdlForm::downloadButtonClick(TObject *Sender)
 {
 
     Download->IOHandler = OpenSSL;
@@ -44,7 +45,7 @@ void __fastcall TdlForm::DownloadWork(TObject *ASender, TWorkMode AWorkMode, __i
 //---------------------------------------------------------------------------
 
 
-void __fastcall TdlForm::CancelClick(TObject *Sender)
+void __fastcall TdlForm::dlCancelButtonClick(TObject *Sender)
 {
      Download->Disconnect();
 }

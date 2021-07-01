@@ -3,7 +3,7 @@ object dbForm: TdbForm
   Top = 0
   Caption = 'Database View'
   ClientHeight = 528
-  ClientWidth = 1101
+  ClientWidth = 1082
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,79 +11,90 @@ object dbForm: TdbForm
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
+  object bookNameLabelDb: TLabel
     Left = 631
     Top = 62
-    Width = 50
+    Width = 57
     Height = 13
-    Caption = 'bookName'
+    Caption = 'Book Name:'
     FocusControl = DBEdit1
   end
-  object Label2: TLabel
-    Left = 774
-    Top = 62
-    Width = 59
-    Height = 13
-    Caption = 'authorName'
-    FocusControl = DBEdit2
-  end
-  object Label3: TLabel
-    Left = 774
-    Top = 108
-    Width = 74
-    Height = 13
-    Caption = 'authorSurname'
-    FocusControl = DBEdit3
-  end
-  object Label5: TLabel
+  object pageNumLabelDb: TLabel
     Left = 631
     Top = 108
-    Width = 45
+    Width = 68
     Height = 13
-    Caption = 'pageNum'
+    Caption = 'Page Number:'
     FocusControl = DBEdit4
   end
-  object Label7: TLabel
-    Left = 700
+  object ratingLabelDb: TLabel
+    Left = 705
     Top = 108
-    Width = 28
+    Width = 35
     Height = 13
-    Caption = 'rating'
+    Caption = 'Rating:'
     FocusControl = DBEdit6
   end
-  object Label8: TLabel
-    Left = 427
-    Top = 344
-    Width = 59
-    Height = 13
-    Caption = 'authorName'
-    FocusControl = DBEdit7
-  end
-  object Label9: TLabel
+  object authorSurnameLabelDb: TLabel
     Left = 427
     Top = 384
-    Width = 74
+    Width = 82
     Height = 13
-    Caption = 'authorSurname'
+    Caption = 'Author Surname:'
     FocusControl = DBEdit8
   end
-  object Label10: TLabel
-    Left = 427
-    Top = 424
-    Width = 76
-    Height = 13
-    Caption = 'authorBirthyear'
-    FocusControl = birthyearField
-  end
-  object Label11: TLabel
+  object countryLabelDb: TLabel
     Left = 427
     Top = 464
-    Width = 37
+    Width = 43
     Height = 13
-    Caption = 'country'
+    Caption = 'Country:'
     FocusControl = DBEdit10
+  end
+  object GroupBoxDatabase1: TGroupBox
+    Left = 615
+    Top = 40
+    Width = 314
+    Height = 133
+    Caption = 'Edit Book Info'
+    TabOrder = 15
+    object bookAuthorLabelDb: TLabel
+      Left = 159
+      Top = 22
+      Width = 67
+      Height = 13
+      Caption = 'Author Name:'
+      FocusControl = DBEdit2
+    end
+    object bookAuthorSurnameLabelDb: TLabel
+      Left = 159
+      Top = 68
+      Width = 82
+      Height = 13
+      Caption = 'Author Surname:'
+      FocusControl = DBEdit3
+    end
+    object DBEdit2: TDBEdit
+      Left = 159
+      Top = 41
+      Width = 134
+      Height = 21
+      DataField = 'authorName'
+      DataSource = DBook
+      TabOrder = 0
+    end
+    object DBEdit3: TDBEdit
+      Left = 160
+      Top = 87
+      Width = 134
+      Height = 21
+      DataField = 'authorSurname'
+      DataSource = DBook
+      TabOrder = 1
+    end
   end
   object GroupBoxDatabase2: TGroupBox
     Left = 408
@@ -91,23 +102,31 @@ object dbForm: TdbForm
     Width = 185
     Height = 193
     Caption = 'Edit Author Info'
-    TabOrder = 19
+    TabOrder = 17
+    object authorNameLabelDb: TLabel
+      Left = 18
+      Top = 13
+      Width = 67
+      Height = 13
+      Caption = 'Author Name:'
+      FocusControl = DBEdit7
+    end
+    object authorBirthyearLabelDb: TLabel
+      Left = 17
+      Top = 99
+      Width = 56
+      Height = 14
+      Caption = 'Birthyear:'
+      FocusControl = birthyearField
+    end
   end
-  object groupboxreview: TGroupBox
+  object groupBoxReviewDb: TGroupBox
     Left = 615
     Top = 179
-    Width = 450
+    Width = 346
     Height = 105
     Caption = 'Edit and Read your Review'
-    TabOrder = 18
-  end
-  object GroupBoxDatabase1: TGroupBox
-    Left = 615
-    Top = 40
-    Width = 298
-    Height = 133
-    Caption = 'Edit Book Info'
-    TabOrder = 17
+    TabOrder = 16
   end
   object DBGrid1: TDBGrid
     Left = 8
@@ -166,7 +185,7 @@ object dbForm: TdbForm
   object DBGrid2: TDBGrid
     Left = 611
     Top = 303
-    Width = 482
+    Width = 470
     Height = 217
     DataSource = DAuthor
     TabOrder = 1
@@ -213,10 +232,10 @@ object dbForm: TdbForm
       end>
   end
   object deleteRecordButton: TButton
-    Left = 937
-    Top = 96
-    Width = 112
-    Height = 40
+    Left = 936
+    Top = 73
+    Width = 138
+    Height = 86
     Caption = 'Delete Record'
     TabOrder = 2
     OnClick = deleteRecordButtonClick
@@ -262,32 +281,14 @@ object dbForm: TdbForm
     DataSource = DBook
     TabOrder = 7
   end
-  object DBEdit2: TDBEdit
-    Left = 774
-    Top = 81
-    Width = 120
-    Height = 21
-    DataField = 'authorName'
-    DataSource = DBook
-    TabOrder = 8
-  end
-  object DBEdit3: TDBEdit
-    Left = 774
-    Top = 127
-    Width = 120
-    Height = 21
-    DataField = 'authorSurname'
-    DataSource = DBook
-    TabOrder = 9
-  end
   object DBMemo1: TDBMemo
     Left = 631
     Top = 195
-    Width = 418
+    Width = 322
     Height = 78
     DataField = 'review'
     DataSource = DBook
-    TabOrder = 10
+    TabOrder = 8
   end
   object DBEdit4: TDBEdit
     Left = 631
@@ -296,16 +297,16 @@ object dbForm: TdbForm
     Height = 21
     DataField = 'pageNum'
     DataSource = DBook
-    TabOrder = 11
+    TabOrder = 9
   end
   object DBEdit6: TDBEdit
-    Left = 700
+    Left = 705
     Top = 127
     Width = 33
     Height = 21
     DataField = 'rating'
     DataSource = DBook
-    TabOrder = 12
+    TabOrder = 10
   end
   object DBEdit7: TDBEdit
     Left = 427
@@ -314,7 +315,7 @@ object dbForm: TdbForm
     Height = 21
     DataField = 'authorName'
     DataSource = DAuthor
-    TabOrder = 13
+    TabOrder = 11
   end
   object DBEdit8: TDBEdit
     Left = 427
@@ -323,7 +324,7 @@ object dbForm: TdbForm
     Height = 21
     DataField = 'authorSurname'
     DataSource = DAuthor
-    TabOrder = 14
+    TabOrder = 12
   end
   object birthyearField: TDBEdit
     Left = 427
@@ -332,7 +333,7 @@ object dbForm: TdbForm
     Height = 21
     DataField = 'authorBirthyear'
     DataSource = DAuthor
-    TabOrder = 15
+    TabOrder = 13
   end
   object DBEdit10: TDBEdit
     Left = 427
@@ -341,7 +342,7 @@ object dbForm: TdbForm
     Height = 21
     DataField = 'country'
     DataSource = DAuthor
-    TabOrder = 16
+    TabOrder = 14
   end
   object sortButton: TButton
     Left = 8
@@ -349,7 +350,7 @@ object dbForm: TdbForm
     Width = 117
     Height = 22
     Caption = 'Sort By Rating'
-    TabOrder = 20
+    TabOrder = 18
     OnClick = sortButtonClick
   end
   object sortButtonPageNum: TButton
@@ -358,7 +359,7 @@ object dbForm: TdbForm
     Width = 120
     Height = 22
     Caption = 'Sort By Page Number'
-    TabOrder = 21
+    TabOrder = 19
     OnClick = sortButtonPageNumClick
   end
   object genreFilterField: TDBLookupComboBox
@@ -369,7 +370,7 @@ object dbForm: TdbForm
     KeyField = 'genre'
     ListField = 'genre'
     ListSource = DGenre
-    TabOrder = 22
+    TabOrder = 20
   end
   object filterGenreButton: TButton
     Left = 282
@@ -377,7 +378,7 @@ object dbForm: TdbForm
     Width = 89
     Height = 18
     Caption = 'Filter by Genre'
-    TabOrder = 23
+    TabOrder = 21
     OnClick = filterGenreButtonClick
   end
   object isbnField: TDBMemo
@@ -387,7 +388,7 @@ object dbForm: TdbForm
     Height = 17
     DataField = 'ISBN'
     DataSource = DBook
-    TabOrder = 24
+    TabOrder = 22
   end
   object checkISBN: TButton
     Left = 56
@@ -395,7 +396,7 @@ object dbForm: TdbForm
     Width = 113
     Height = 25
     Caption = 'Validate ISBN Offline'
-    TabOrder = 25
+    TabOrder = 23
     OnClick = checkISBNClick
   end
   object openIsbnFormButton: TButton
@@ -404,7 +405,7 @@ object dbForm: TdbForm
     Width = 185
     Height = 25
     Caption = ' Validate ISBN with TCP or UDP'
-    TabOrder = 26
+    TabOrder = 24
     OnClick = openIsbnFormButtonClick
   end
   object calcAgeButton: TButton
@@ -413,7 +414,7 @@ object dbForm: TdbForm
     Width = 82
     Height = 25
     Caption = 'Calculate Age'
-    TabOrder = 27
+    TabOrder = 25
     OnClick = calcAgeButtonClick
   end
   object ageField: TEdit
@@ -421,7 +422,7 @@ object dbForm: TdbForm
     Top = 440
     Width = 32
     Height = 21
-    TabOrder = 28
+    TabOrder = 26
   end
   object TBook: TADOTable
     Active = True
