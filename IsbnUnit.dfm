@@ -2,7 +2,7 @@ object isbnForm: TisbnForm
   Left = 0
   Top = 0
   Caption = 'ISBN Validate'
-  ClientHeight = 233
+  ClientHeight = 316
   ClientWidth = 307
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,7 +13,7 @@ object isbnForm: TisbnForm
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
+  object hostLabel: TLabel
     Left = 136
     Top = 13
     Width = 39
@@ -47,7 +47,7 @@ object isbnForm: TisbnForm
   object checkIsbnButton: TButton
     Left = 21
     Top = 152
-    Width = 100
+    Width = 124
     Height = 25
     Caption = 'Check ISBN TCP'
     TabOrder = 3
@@ -56,14 +56,14 @@ object isbnForm: TisbnForm
   object responseField: TEdit
     Left = 21
     Top = 191
-    Width = 100
+    Width = 124
     Height = 21
     TabOrder = 4
   end
   object checkUdpButton: TButton
-    Left = 184
+    Left = 168
     Top = 152
-    Width = 105
+    Width = 121
     Height = 25
     Caption = 'Check ISBN UDP'
     TabOrder = 5

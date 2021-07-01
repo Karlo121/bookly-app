@@ -1,0 +1,54 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "IsbnUnit.h"
+#include "DatabaseUnit.h"
+#include "isbnservice.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TisbnForm *isbnForm;
+
+
+//---------------------------------------------------------------------------
+	: TForm(Owner)
+{
+
+}
+//---------------------------------------	------------------------------------
+void __fastcall TisbnForm::isbnLoadButtonClick(TObject *Sender)
+{
+             isbnText->Text = dbForm->isbnField->Text;
+}
+//---------------------------------------------------------------------------
+void __fastcall TisbnForm::checkIsbnButtonClick(TObject *Sender)
+{
+	 tcpClient->Host = hostField->Text;
+
+	 tcpClient->Connect();
+	 tcpClient->Socket->WriteLn(isbnText->Text);
+
+	 // èekaj i ispiši odgovor poslužitelja
+
+	 _di_ISBNServiceSoapType isbnValidate = GetISBNServiceSoapType();
+
+	 if(isbnValidate->IsValidISBN13(tcpClient->Socket->ReadLn()) == 1){
+		responseField->Text = "Valid ISBN";
+	 }
+	 else {
+		responseField->Text = "Invalid ISBN";
+	 }
+
+	 tcpClient->Disconnect();
+}
+//---------------------------------------------------------------------------
+void __fastcall TisbnForm::checkUdpButtonClick(TObject *Sender)
+{
+	udpClient->SendBuffer(hostField->Text, 23427, ToBytes(isbnText->Text));
+}
+//---------------------------------------------------------------------------
+
+
+

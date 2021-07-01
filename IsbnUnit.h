@@ -13,13 +13,14 @@
 #include <IdTCPConnection.hpp>
 #include <IdUDPBase.hpp>
 #include <IdUDPClient.hpp>
+#include <Vcl.ExtCtrls.hpp>
 //---------------------------------------------------------------------------
 class TisbnForm : public TForm
 {
 __published:	// IDE-managed Components
 	TIdTCPClient *tcpClient;
 	TEdit *hostField;
-	TLabel *Label1;
+	TLabel *hostLabel;
 	TEdit *isbnText;
 	TButton *isbnLoadButton;
 	TButton *checkIsbnButton;

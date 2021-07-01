@@ -85,7 +85,7 @@ object dbForm: TdbForm
     Caption = 'country'
     FocusControl = DBEdit10
   end
-  object GroupBox2: TGroupBox
+  object GroupBoxDatabase2: TGroupBox
     Left = 408
     Top = 328
     Width = 185
@@ -101,7 +101,7 @@ object dbForm: TdbForm
     Caption = 'Edit and Read your Review'
     TabOrder = 18
   end
-  object GroupBox1: TGroupBox
+  object GroupBoxDatabase1: TGroupBox
     Left = 615
     Top = 40
     Width = 298
@@ -212,14 +212,14 @@ object dbForm: TdbForm
         Visible = True
       end>
   end
-  object Button1: TButton
+  object deleteRecordButton: TButton
     Left = 937
     Top = 96
     Width = 112
     Height = 40
     Caption = 'Delete Record'
     TabOrder = 2
-    OnClick = Button1Click
+    OnClick = deleteRecordButtonClick
   end
   object nameSearch: TEdit
     Left = 24

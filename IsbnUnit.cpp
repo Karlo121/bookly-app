@@ -10,15 +10,18 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TisbnForm *isbnForm;
+
+
 //---------------------------------------------------------------------------
 __fastcall TisbnForm::TisbnForm(TComponent* Owner)
 	: TForm(Owner)
 {
+
 }
-//---------------------------------------------------------------------------
+//---------------------------------------	------------------------------------
 void __fastcall TisbnForm::isbnLoadButtonClick(TObject *Sender)
 {
-             isbnText->Text = dbForm->isbnField->Text;
+     isbnText->Text = dbForm->isbnField->Text;
 }
 //---------------------------------------------------------------------------
 void __fastcall TisbnForm::checkIsbnButtonClick(TObject *Sender)
@@ -26,7 +29,7 @@ void __fastcall TisbnForm::checkIsbnButtonClick(TObject *Sender)
 	 tcpClient->Host = hostField->Text;
 
 	 tcpClient->Connect();
-	 tcpClient->Socket->WriteLn(isbnText->Text);;
+	 tcpClient->Socket->WriteLn(isbnText->Text);
 
 	 // èekaj i ispiši odgovor poslužitelja
 
@@ -47,3 +50,6 @@ void __fastcall TisbnForm::checkUdpButtonClick(TObject *Sender)
 	udpClient->SendBuffer(hostField->Text, 23427, ToBytes(isbnText->Text));
 }
 //---------------------------------------------------------------------------
+
+
+

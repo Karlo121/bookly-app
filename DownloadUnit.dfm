@@ -2,8 +2,8 @@ object dlForm: TdlForm
   Left = 0
   Top = 0
   Caption = 'Download Bookly'
-  ClientHeight = 299
-  ClientWidth = 635
+  ClientHeight = 232
+  ClientWidth = 572
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

@@ -1,0 +1,26 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "FontChangeUnit.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TchangeFontForm *changeFontForm;
+//---------------------------------------------------------------------------
+__fastcall TchangeFontForm::TchangeFontForm(TComponent* Owner)
+	: TForm(Owner)
+{
+ String toUpper(String string) {
+  for(int i = 0; i < string.size(); i++) {
+	string.at(i) = toupper(string.at(i));
+  }
+  return string;
+};
+
+	Label1->Text();
+
+}
+//---------------------------------------------------------------------------
+

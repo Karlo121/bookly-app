@@ -27,11 +27,11 @@ object changeFontForm: TchangeFontForm
     ParentFont = False
   end
   object Label1: TLabel
-    Left = 24
+    Left = 26
     Top = 32
-    Width = 128
+    Width = 126
     Height = 20
-    Caption = 'Change Font Style'
+    Caption = 'Change your Font'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 20
@@ -75,7 +75,7 @@ object changeFontForm: TchangeFontForm
     Text = 'Arial'
   end
   object StaticText1: TStaticText
-    Left = 24
+    Left = 26
     Top = 85
     Width = 139
     Height = 17

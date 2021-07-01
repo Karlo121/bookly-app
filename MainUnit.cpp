@@ -9,6 +9,7 @@
 #include "DatabaseUnit.h"
 #include "DownloadUnit.h"
 #include "QuoteUnit.h"
+#include "IsbnUnit.h"
 #include "XmlUnit.h"
 #include "books.h"
 #include <registry.hpp>
@@ -23,6 +24,7 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TmainForm *mainForm;
+HINSTANCE myFlags;
 
 
 class myFileFormat {
@@ -43,6 +45,7 @@ public:
    wchar_t review[200];
    int pageNum; int rating;
 
+
    Book() = default;
    Book(const wchar_t* _name,const  wchar_t* _authorName,
 		const wchar_t* _authorSurname, const wchar_t* _review,
@@ -56,11 +59,302 @@ public:
 	   rating = _rating;
    }
 
+
 };
+
+void translateForm(TForm* Form, String Language, const std::map<String, std::map<String, String>>& translation){
+	for(int i = 0; i < Form->ComponentCount; i++)
+		for(auto it_ComponentName = translation.begin(); it_ComponentName != translation.end(); it_ComponentName++)
+			if(Form->Components[i]->Name == it_ComponentName->first)
+			   for(auto it_Language = it_ComponentName->second.begin(); it_Language != it_ComponentName->second.end(); it_Language++)
+				   if(it_Language->first == Language)
+					  if(IsPublishedProp(Form->Components[i], "Caption"))
+						 SetPropValue(Form->Components[i], "Caption", it_Language->second);
+}
+
 //---------------------------------------------------------------------------
 __fastcall TmainForm::TmainForm(TComponent* Owner)
 	: TForm(Owner)
 {
+  myFlags = LoadLibraryA("flags.dll");
+  if(!myFlags) {
+	  ShowMessage("flags.dll is missing");
+	  return;
+  }
+  Image1->Picture->Bitmap->LoadFromResourceName((unsigned)myFlags, "HR");
+  Image2->Picture->Bitmap->LoadFromResourceName((unsigned)myFlags, "UK");
+  FreeLibrary(myFlags);
+
+  translation["xmlAddButton"] = {
+	 {
+		  {"EN", "Insert Record"},
+		  {"HR", "Unesi zapis"}
+	 }
+  };
+  translation["reviewButton"] = {
+	 {
+		  {"EN", "Write a review"},
+		  {"HR", "Zapisi misljenje"}
+	 }
+  };
+  translation["bookBox"] = {
+	 {
+		  {"EN", "Book"},
+		  {"HR", "Knjiga"}
+	 }
+  };
+  translation["bookNameLabel"] = {
+	 {
+		  {"EN", "Name:"},
+		  {"HR", "Ime:"}
+	 }
+  };
+  translation["bookPageNumLabel"] = {
+	 {
+		  {"EN", "Page num:"},
+		  {"HR", "Broj stranica:"}
+	 }
+  };
+  translation["genreLabel"] = {
+	 {
+		  {"EN", "Genre:"},
+		  {"HR", "Žanr:"}
+	 }
+  };
+  translation["autorBox"] = {
+	 {
+		  {"EN", "Author:"},
+		  {"HR", "Autor:"}
+	 }
+  };
+  translation["autorNameLabel"] = {
+	 {
+		  {"EN", "Name:"},
+		  {"HR", "Ime:"}
+	 }
+  };
+  translation["autorSurnameLabel"] = {
+	 {
+		  {"EN", "Surname:"},
+		  {"HR", "Prezime:"}
+	 }
+  };
+  translation["birthYearLabel"] = {
+	 {
+		  {"EN", "Birth year:"},
+		  {"HR", "Godina roð.:"}
+	 }
+  };
+  translation["ratingBox"] = {
+	 {
+		  {"EN", "Rating"},
+		  {"HR", "Ocjena"}
+	 }
+  };
+  translation["seeDataButton"] = {
+	 {
+		  {"EN", "See Data"},
+		  {"HR", "Pregled zapisa"}
+	 }
+  };
+  translation["xmlViewOpenButton"] = {
+	 {
+		  {"EN", "See XML"},
+		  {"HR", "Pregled XML-a"}
+	 }
+  };
+  translation["qotdButton"] = {
+	 {
+		  {"EN", "Quote of the day"},
+		  {"HR", "Citat dana"}
+	 }
+  };
+  translation["appBarButton"] = {
+	 {
+		  {"EN", "Application"},
+		  {"HR", "Aplikacija"}
+	 }
+  };
+  translation["DownloadBookly1"] = {
+	 {
+		  {"EN", "Download Bookly database"},
+		  {"HR", "Preuzmi Bookly bazu podataka"}
+	 }
+  };
+  translation["ChangeFont"] = {
+	 {
+		  {"EN", "Change Font/Size"},
+		  {"HR", "Promijeni Font"}
+	 }
+  };
+  translation["Exit1"] = {
+	 {
+		  {"EN", "Exit"},
+		  {"HR", "Izlaz"}
+	 }
+  };
+  translation["SaveasCustom1"] = {
+	 {
+		  {"EN", "Save as Custom..."},
+		  {"HR", "Spremi kao prilagoðen format..."}
+	 }
+  };
+  translation["OpenCustom1"] = {
+	 {
+		  {"EN", "Open Custom..."},
+		  {"HR", "Otvori prilagoðeni format..."}
+	 }
+  };
+  translation["changeFontLabel"] = {
+	 {
+		  {"EN", "Change your Font"},
+		  {"HR", "Promijenite Font"}
+	 }
+  };
+  translation["fontSizeLabel"] = {
+	 {
+		  {"EN", "Change your Font size"},
+		  {"HR", "Promijenite velicinu Fonta"}
+	 }
+  };
+  translation["fontChangeDoneButton"] = {
+	 {
+		  {"EN", "Done"},
+		  {"HR", "Gotovo"}
+	 }
+  };
+  translation["searchButton"] = {
+	 {
+		  {"EN", "Search By Name"},
+		  {"HR", "Pretrazi po imenu"}
+	 }
+  };
+  translation["authorSearchButton"] = {
+	 {
+		  {"EN", "Search by Author Name/Surname"},
+		  {"HR", "Pretrazi po autorovom imenu i prezimenu"}
+	 }
+  };
+  translation["GroupBoxDatabase1"] = {
+	 {
+		  {"EN", "Edit Book Info"},
+		  {"HR", "Uredi informacije knjige"}
+	 }
+  };
+  translation["GroupBoxDatabase2"] = {
+	 {
+		  {"EN", "Edit Author Info"},
+		  {"HR", "Uredi informacije o autoru"}
+	 }
+  };
+  translation["calcAgeButton"] = {
+	 {
+		  {"EN", "Calculate age"},
+		  {"HR", "Izracunaj godine"}
+	 }
+  };
+  translation["sortButton"] = {
+	 {
+		  {"EN", "Sort by rating"},
+		  {"HR", "Sortiraj po ocjenama"}
+	 }
+  };
+  translation["sortButtonPageNum"] = {
+	 {
+		  {"EN", "Sort By Page Number"},
+		  {"HR", "Sortiraj po stranicama"}
+	 }
+  };
+  translation["filterGenreButton"] = {
+	 {
+		  {"EN", "Filter by genre"},
+		  {"HR", "Filtriraj po žanru"}
+	 }
+  };
+  translation["openIsbnFormButton"] = {
+	 {
+		  {"EN", "Validate ISBN with TCP or UDP"},
+		  {"HR", "Validiraj ISBN pomocu TCP-a ili UDP-a"}
+	 }
+  };
+  translation["checkISBN"] = {
+	 {
+		  {"EN", "Validate ISBN Offline"},
+		  {"HR", "Validiraj ISBN Offline"}
+	 }
+  };
+  translation["deleteRecordButton"] = {
+	 {
+		  {"EN", "Delete record"},
+		  {"HR", "Izbrisi Zapis"}
+	 }
+  };
+  translation["deleteRecordButton"] = {
+	 {
+		  {"EN", "Delete record"},
+		  {"HR", "Izbrisi Zapis"}
+	 }
+  };
+  translation["xmlLoadButton"] = {
+	 {
+		  {"EN", "Load XML"},
+		  {"HR", "Prikazi XML"}
+	 }
+  };
+  translation["xmlDeleteButton"] = {
+	 {
+		  {"EN", "Delete from XML"},
+		  {"HR", "Izbrisi iz XML-a"}
+	 }
+  };
+  translation["isbnLoadButton"] = {
+	{
+		{"EN", "Load Selected ISBN"},
+		{"HR", "Dohvati ISBN"}
+	}
+  };
+  translation["checkIsbnButton"] = {
+	 {
+		 {"EN", "Check ISBN TCP"},
+		 {"HR", "Provijeri ISBN preko TCP-a"}
+	 }
+  };
+  translation["checkUdpButton"] = {
+	  {
+		  {"EN", "Check ISBN UDP"},
+		  {"HR", "Provijeri ISBN preko UDP-a"}
+	  }
+  };
+  translation["hostLabel"] = {
+	  {
+		  {"EN", "Host IP:"},
+		  {"HR", "Hostov IP"}
+	  }
+  };
+  translation["downloadButton"] = {
+	  {
+		  {"EN", "Download"},
+		  {"HR", "Preuzmi"}
+	  }
+  };
+  translation["cancelButton"] = {
+	  {
+		  {"EN", "Cancel"},
+		  {"HR", "Prekini"}
+	  }
+  };
+  translation["downloadButton"] = {
+	  {
+		  {"EN", "Download"},
+		  {"HR", "Preuzmi"}
+	  }
+  };
+   translation["dlCancelButton"] = {
+	  {
+		  {"EN", "Cancel"},
+		  {"HR", "Prekini"}
+	  }
+  };
 }
 //---------------------------------------------------------------------------
 
@@ -83,13 +377,20 @@ void __fastcall TmainForm::reviewButtonClick(TObject *Sender)
 void __fastcall TmainForm::FormClose(TObject *Sender, TCloseAction &Action)
 {
    TIniFile* ini = new TIniFile(GetCurrentDir() + "\\settings.ini");
-   ini->WriteInteger("Main Windows", "Left", Left);
-   ini->WriteInteger("Main Windows", "Top", Top);
-   ini->WriteInteger("Main Windows", "Width", Width);
-   ini->WriteInteger("Main Windows", "Height", Height);
-   ini->WriteInteger("Main Windows", "Font.Height", Font->Height);
-   ini->WriteString("Main Windows", "Font.Name", Font->Name);
-
+   // Ini settings for main form
+   ini->WriteInteger("Main Form", "Left", Left);
+   ini->WriteInteger("Main Form", "Top", Top);
+   ini->WriteInteger("Main Form", "Width", Width);
+   ini->WriteInteger("Main Form", "Height", Height);
+   ini->WriteInteger("Main Form", "Font.Height", Font->Height);
+   ini->WriteString("Main Form", "Font.Name", Font->Name);
+   // Ini settings for db form
+   ini->WriteInteger("Database Form", "Left", dbForm->Left);
+   ini->WriteInteger("Database Form", "Top", dbForm->Top);
+   ini->WriteInteger("Database Form", "Width", dbForm->Width);
+   ini->WriteInteger("Database Form", "Height", dbForm->Height);
+   ini->WriteInteger("Database Form", "Font.Height",Font->Height);
+   ini->WriteString("Database Form", "Font.Name", Font->Name);
    delete ini;
 }
 //---------------------------------------------------------------------------
@@ -97,12 +398,20 @@ void __fastcall TmainForm::FormClose(TObject *Sender, TCloseAction &Action)
 void __fastcall TmainForm::FormCreate(TObject *Sender)
 {
    TIniFile* ini = new TIniFile(GetCurrentDir() + "\\settings.ini");
-   Left = ini->ReadInteger("Main Windows", "Left", 0);
-   Top = ini->ReadInteger("Main Windows", "Top", 0);
-   Width = ini->ReadInteger("Main Windows", "Width", 600);
-   Height = ini->ReadInteger("Main Windows", "Height", 500);
-   Font->Height = ini->ReadInteger("Main Windows", "Font.Height", Font->Height);
-   Font->Name = ini->ReadString("Main Windows", "Font.Name", Font->Name);
+   // main forma
+   Left = ini->ReadInteger("Main Form", "Left", 0);
+   Top = ini->ReadInteger("Main Form", "Top", 0);
+   Width = ini->ReadInteger("Main Form", "Width", 640);
+   Height = ini->ReadInteger("Main Form", "Height", 500);
+   Font->Height = ini->ReadInteger("Main Form", "Font.Height", Font->Height);
+   Font->Name = ini->ReadString("Main Form", "Font.Name", Font->Name);
+   // db forma
+   dbForm->Left = ini->ReadInteger("Database Form", "Left", 0);
+   dbForm->Top = ini->ReadInteger("Database Form", "Top", 0);
+   dbForm->Width = ini->ReadInteger("Database Form", "Width", 1117);
+   dbForm->Height = ini->ReadInteger("Database Form", "Height", 565);
+//   dbForm->Font->Height = ini->ReadInteger("Database Form", "Font.Height", Font->Height);
+//   dbForm->Font->Name = ini->ReadString("Database Form", "Font.Name", Font->Name);
    delete ini;
 }
 //---------------------------------------------------------------------------
@@ -125,9 +434,7 @@ void __fastcall TmainForm::xmlAddButtonClick(TObject *Sender)
 
 
    srand(time(NULL));
-   printf("%d", rand());
    int numberForId = rand();
-
 
 
    _di_IXMLbooksType Books = Getbooks(xmlForm->XMLDocument1);
@@ -179,12 +486,8 @@ void __fastcall TmainForm::xmlAddButtonClick(TObject *Sender)
    dbForm->TAuthor->FieldByName("authorName")->AsString = autorName->Text;
    dbForm->TAuthor->FieldByName("authorSurname")->AsString = autorSurname->Text;
    dbForm->TAuthor->Post();
-
-
 }
 //---------------------------------------------------------------------------
-
-
 
 void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 {
@@ -248,7 +551,7 @@ void __fastcall TmainForm::SaveasCustom1Click(TObject *Sender)
 
 
 
-void __fastcall TmainForm::Button1Click(TObject *Sender)
+void __fastcall TmainForm::seeDataButtonClick(TObject *Sender)
 {
 		 dbForm->Show();
 }
@@ -273,6 +576,31 @@ void __fastcall TmainForm::DownloadBookly1Click(TObject *Sender)
 void __fastcall TmainForm::qotdButtonClick(TObject *Sender)
 {
       quoteForm->Show();
+}
+//---------------------------------------------------------------------------
+
+
+//---------------------------------------------------------------------------
+
+void __fastcall TmainForm::Image1Click(TObject *Sender)
+{
+	  translateForm(this, "HR", translation);
+	  translateForm(changeFontForm, "HR", translation);
+	  translateForm(dbForm, "HR", translation);
+	  translateForm(xmlForm, "HR", translation);
+	  translateForm(isbnForm, "HR", translation);
+	  translateForm(dlForm, "HR", translation);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TmainForm::Image2Click(TObject *Sender)
+{
+      translateForm(this, "EN", translation);
+	  translateForm(changeFontForm, "EN", translation);
+	  translateForm(dbForm, "EN", translation);
+	  translateForm(xmlForm, "EN", translation);
+	  translateForm(isbnForm, "EN", translation);
+	  translateForm(dlForm, "EN", translation);
 }
 //---------------------------------------------------------------------------
 

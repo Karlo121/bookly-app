@@ -38,8 +38,8 @@ void __fastcall TdlForm::DownloadWorkBegin(TObject *ASender, TWorkMode AWorkMode
 void __fastcall TdlForm::DownloadWork(TObject *ASender, TWorkMode AWorkMode, __int64 AWorkCount)
 
 {
-   ProgressBar1->Position = AWorkCount;
-   Application->ProcessMessages();
+	 ProgressBar1->Position = AWorkCount;
+	 Application->ProcessMessages();
 }
 //---------------------------------------------------------------------------
 

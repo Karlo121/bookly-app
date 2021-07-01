@@ -19,6 +19,8 @@
 #include <Vcl.Grids.hpp>
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.WinXCalendars.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <map>
 //---------------------------------------------------------------------------
 class TmainForm : public TForm
 {
@@ -42,7 +44,7 @@ __published:	// IDE-managed Components
 	TSaveDialog *SaveDialog;
 	TOpenDialog *OpenDialog;
 	TMainMenu *MainMenu1;
-	TMenuItem *File;
+	TMenuItem *appBarButton;
 	TMenuItem *Exit1;
 	TMenuItem *File1;
 	TButton *reviewButton;
@@ -51,16 +53,18 @@ __published:	// IDE-managed Components
 	TButton *xmlAddButton;
 	TMenuItem *SaveasCustom1;
 	TMenuItem *OpenCustom1;
-	TButton *Button1;
+	TButton *seeDataButton;
 	TButton *xmlViewOpenButton;
-	TLabel *Label1;
-	TDBLookupComboBox *genreSelector;
 	TEdit *yearField;
-	TLabel *Label2;
+	TLabel *birthYearLabel;
 	TEdit *isbnField;
-	TLabel *Label3;
+	TLabel *isbnLabel;
 	TMenuItem *DownloadBookly1;
 	TButton *qotdButton;
+	TImage *Image1;
+	TImage *Image2;
+	TDBLookupComboBox *genreSelector;
+	TLabel *genreLabel;
 	void __fastcall Exit1Click(TObject *Sender);
 	void __fastcall reviewButtonClick(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
@@ -68,13 +72,16 @@ __published:	// IDE-managed Components
 	void __fastcall ChangeFontClick(TObject *Sender);
 	void __fastcall xmlAddButtonClick(TObject *Sender);
 	void __fastcall SaveasCustom1Click(TObject *Sender);
-	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall seeDataButtonClick(TObject *Sender);
 	void __fastcall xmlViewOpenButtonClick(TObject *Sender);
 	void __fastcall DownloadBookly1Click(TObject *Sender);
 	void __fastcall qotdButtonClick(TObject *Sender);
+	void __fastcall Image1Click(TObject *Sender);
+	void __fastcall Image2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TmainForm(TComponent* Owner);
+	std::map<String, std::map<String, String>> translation;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TmainForm *mainForm;

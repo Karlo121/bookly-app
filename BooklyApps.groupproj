@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{37C945C8-13CA-4E2D-995B-6E19CB0ACA6E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Bookly.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="D:\C++\C++ builder\BooklyServer.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="D:\C++\C++ builder\BooklySoap.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HRV\Bookly_HRV.bdsproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ENU\Bookly_ENU.bdsproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Bookly">
+        <MSBuild Projects="Bookly.cbproj"/>
+    </Target>
+    <Target Name="Bookly:Clean">
+        <MSBuild Projects="Bookly.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Bookly:Make">
+        <MSBuild Projects="Bookly.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="BooklyServer">
+        <MSBuild Projects="D:\C++\C++ builder\BooklyServer.cbproj"/>
+    </Target>
+    <Target Name="BooklyServer:Clean">
+        <MSBuild Projects="D:\C++\C++ builder\BooklyServer.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BooklyServer:Make">
+        <MSBuild Projects="D:\C++\C++ builder\BooklyServer.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="BooklySoap">
+        <MSBuild Projects="D:\C++\C++ builder\BooklySoap.cbproj"/>
+    </Target>
+    <Target Name="BooklySoap:Clean">
+        <MSBuild Projects="D:\C++\C++ builder\BooklySoap.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BooklySoap:Make">
+        <MSBuild Projects="D:\C++\C++ builder\BooklySoap.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Bookly_HRV">
+        <MSBuild Projects="HRV\Bookly_HRV.bdsproj"/>
+    </Target>
+    <Target Name="Bookly_HRV:Clean">
+        <MSBuild Projects="HRV\Bookly_HRV.bdsproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Bookly_HRV:Make">
+        <MSBuild Projects="HRV\Bookly_HRV.bdsproj" Targets="Make"/>
+    </Target>
+    <Target Name="Bookly_ENU">
+        <MSBuild Projects="ENU\Bookly_ENU.bdsproj"/>
+    </Target>
+    <Target Name="Bookly_ENU:Clean">
+        <MSBuild Projects="ENU\Bookly_ENU.bdsproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Bookly_ENU:Make">
+        <MSBuild Projects="ENU\Bookly_ENU.bdsproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Bookly;BooklyServer;BooklySoap;Bookly_HRV;Bookly_ENU"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Bookly:Clean;BooklyServer:Clean;BooklySoap:Clean;Bookly_HRV:Clean;Bookly_ENU:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Bookly:Make;BooklyServer:Make;BooklySoap:Make;Bookly_HRV:Make;Bookly_ENU:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
